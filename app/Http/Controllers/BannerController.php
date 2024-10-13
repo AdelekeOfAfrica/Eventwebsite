@@ -13,9 +13,9 @@ class BannerController extends Controller
     //
 
 
-    public function uploadBanner(){
+    public function Banners(){
         try{
-                return view('Backend.uploadBanner');
+                return view('Backend.banners');
         }catch(Exception $e){
             return view($e,[],500);
         }

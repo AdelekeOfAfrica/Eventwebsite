@@ -29,10 +29,10 @@
                         </a>
                     </div>
                     <div class="col-md-4 card-summary">
-                        <a href="/uploadBanner" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
+                        <a href="{{route('banners')}}" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-calendar-check fa-2x mb-3" style="color: white;"></i>
-                                <h5 class="card-title">Bookings</h5>
+                                <h5 class="card-title">Banners</h5>
                                 <h2 class="card-text">5</h2>
                             </div>
                         </a>

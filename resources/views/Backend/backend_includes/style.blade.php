@@ -85,4 +85,10 @@
                 padding: 0 15px; /* Add padding on sides */
             }
         }
+
+        .card-summary {
+    flex: 1; /* This allows cards to take up equal space */
+    margin: 10px; /* Optional: Space between cards */
+}
+
     </style>

@@ -15,7 +15,7 @@ Route::post('/logout', [AuthenticationController::class,'logout'])->name('logout
 Route::get('/events/data', [EventsController::class, 'getEventData'])->name('events.fetch')->middleware('auth');;
 Route::get('/events/{id}', [EventsController::class, 'show'])->name('events.show')->middleware('auth');
 Route::get('/users',[AuthenticationController::class,'users'])->name('users');
-Route::get('/uploadBanner',[BannerController::class ,'uploadBanner'])->name('uploadBanner')->middleware('auth');
+Route::get('/bannersection',[BannerController::class ,'Banners'])->name('banners')->middleware('auth');
 Route::post('/storeBanners',[BannerController::class,'storeBanners'])->name('storeBanner')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');

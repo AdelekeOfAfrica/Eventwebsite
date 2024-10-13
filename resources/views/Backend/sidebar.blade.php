@@ -1,11 +1,10 @@
 <!-- Sidebar Section -->
 <div id="sidebar">
     <div class="nav flex-column "style="margin-top: 80px;">
-        <a class="nav-link m-2" href="#header-wrap">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a class="nav-link m-2" href="#about">
-            <i class="fas fa-info-circle"></i> About
+        <a class="nav-link m-2" href="/dashboard">
+            <i class="fas fa-home"></i> Dashboard
+        <a class="nav-link m-2" href="{{ route('banners')}}">
+            <i class="fas fa-info-circle"></i> Banners 
         </a>
         <a class="nav-link m-2" href="/login">
             <i class="fas fa-sign-in-alt"></i> Login

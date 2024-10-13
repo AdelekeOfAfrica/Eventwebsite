@@ -60,7 +60,7 @@
         }
     
         /* Card styles */
-        .card-summary {
+        .card-summary-dashboard {
             margin: 20px 0; /* Spacing between cards */
         }
     
@@ -87,8 +87,8 @@
         }
 
         .card-summary {
-    flex: 1; /* This allows cards to take up equal space */
-    margin: 10px; /* Optional: Space between cards */
-}
+            flex: 1; /* This allows cards to take up equal space */
+            margin: 10px; /* Optional: Space between cards */
+        }
 
     </style>

@@ -19,7 +19,7 @@
                
 
                 <div class="row">
-                    <div class="col-md-4 card-summary">
+                    <div class="col-md-4 card-summary-dashboard">
                         <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-blog fa-2x mb-3" style="color: white;"></i>
@@ -28,7 +28,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 card-summary">
+                    <div class="col-md-4 card-summary-dashboard">
                         <a href="{{route('banners')}}" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-calendar-check fa-2x mb-3" style="color: white;"></i>
@@ -37,7 +37,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 card-summary">
+                    <div class="col-md-4 card-summary-dashboard">
                         <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-image fa-2x mb-3" style="color: white;"></i>
@@ -46,7 +46,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 card-summary">
+                    <div class="col-md-4 card-summary-dashboard">
                         <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-users fa-2x mb-3" style="color: white;"></i>
@@ -55,7 +55,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 card-summary">
+                    <div class="col-md-4 card-summary-dashboard">
                         <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-user-tie fa-2x mb-3" style="color: white;"></i>

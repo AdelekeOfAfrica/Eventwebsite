@@ -91,4 +91,32 @@
             margin: 10px; /* Optional: Space between cards */
         }
 
+        .modalban .modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modalban .modal-header {
+    border-bottom: none; /* Remove bottom border */
+}
+
+.modalban .modal-body {
+    padding: 2rem; /* Increase padding for a more spacious look */
+}
+
+.modalban .form-control, .modalban .form-control-file {
+    border-radius: 0.25rem; /* Rounded edges for inputs */
+}
+
+.modalban .btn-primary, .modalban .btn-success {
+    border-radius: 0.25rem; /* Rounded edges for buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.modalban .btn-primary:hover, .modalban .btn-success:hover {
+    background-color: #0056b3; /* Darker blue on hover for primary button */
+    color: #fff; /* Keep text color white on hover */
+}
+
+
     </style>

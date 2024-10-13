@@ -50,6 +50,48 @@
                    
                 </tbody>
             </table>
+
+            <div class="modal fade modalban" id="bannerModal" tabindex="-1" role="dialog" aria-labelledby="bannerModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title" id="bannerModalLabel">Banner Details</h5>
+                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="bannerForm" enctype="multipart/form-data">
+                                <input type="hidden" id="bannerId" name="bannerId">
+
+                                <div class="form-group">
+                                    <label for="eventImage">Image</label>
+                                    <div id="eventImageContainer" class="mb-3">
+                                        <img id="eventImage" src="" alt="Banner Image" class="img-fluid border rounded shadow-sm" />
+                                    </div>
+                                    <input type="file" class="form-control-file" id="imageUpload" name="imageUpload" accept="image/*">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventName">Name</label>
+                                    <input type="text" class="form-control" id="eventName" name="eventName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventDescription">Description</label>
+                                    <textarea class="form-control" id="eventDescription" name="eventDescription" required></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success" id="editBanner">Update Banner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            {{-- end of modal  --}}
         </div>
 
 

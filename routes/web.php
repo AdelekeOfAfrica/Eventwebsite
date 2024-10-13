@@ -19,6 +19,7 @@ Route::get('/bannersection',[BannerController::class ,'Banners'])->name('banners
 Route::get('/fetchbanner',[BannerController::class ,'fetchBanners'])->name('banners.fetch')->middleware('auth');
 Route::post('/storeBanners',[BannerController::class,'storeBanners'])->name('storeBanner')->middleware('auth');
 Route::put('/banners/{id}/status', [BannerController::class, 'toggleBannerStatus'])->name('toggleBannerStatus')->middleware('auth');
+Route::get('/banners/{id}', [BannerController::class, 'fetchBanner'])->name('fetchBanner')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

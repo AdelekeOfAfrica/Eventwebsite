@@ -122,7 +122,7 @@ $(document).ready(function() {
     
     return `
         ${statusButton}
-        <button class="btn btn-primary view-button" data-id="${row.id}" data-toggle="modal" data-target="#eventModal">
+        <button class="btn btn-primary view-button" data-id="${row.id}" data-toggle="modal" data-target="#bannerModal">
             View
         </button>
     `;
@@ -135,6 +135,29 @@ $(document).ready(function() {
                 $(row).addClass('table-danger'); // Red background for inactive banners
             }
         }
+    });
+
+    $(document).on('click', '.view-button', function() {
+        const bannerId = $(this).data('id');
+
+        // Fetch the banner details
+        $.ajax({
+            url: `/banners/${bannerId}`, // Your route to get the banner details
+            type: 'GET',
+            success: function(data) {
+                // Populate the form fields in the modal
+                $('#bannerId').val(data.id);
+                $('#eventName').val(data.title);
+                $('#eventDescription').val(data.description);
+                $('#eventImage').attr('src', data.image_path); // Display the image in the modal
+                
+                // Show the modal
+                $('#bannerModal').modal('show');
+            },
+            error: function(xhr) {
+                alert('Error fetching banner details: ' + xhr.responseJSON.error);
+            }
+        });
     });
 });
 </script>

@@ -80,6 +80,20 @@ class BannerController extends Controller
         }
     }
 
+    
+    public function fetchBanner($id)
+    {
+        try {
+            // Fetch the event by ID
+            $event = Banner::findOrFail($id);
+
+            // Return the event details as JSON
+            return response()->json($event);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
     public function toggleBannerStatus(Request $request, $id)
 {
     try {

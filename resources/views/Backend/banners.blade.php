@@ -61,29 +61,43 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form id="bannerForm" enctype="multipart/form-data">
-                                <input type="hidden" id="bannerId" name="bannerId">
-
-                                <div class="form-group">
-                                    <label for="eventImage">Image</label>
-                                    <div id="eventImageContainer" class="mb-3">
-                                        <img id="eventImage" src="" alt="Banner Image" class="img-fluid border rounded shadow-sm" />
-                                    </div>
-                                    <input type="file" class="form-control-file" id="imageUpload" name="imageUpload" accept="image/*">
+                            <form  method="post" action="{{route('banner.edit')}}" id="bannerForm" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT') 
+                            <input type="hidden" id="bannerId" name="bannerId">
+                            <div class="form-group">
+                                <label for="eventImage">Image</label>
+                                <div id="eventImageContainer" class="mb-3">
+                                    <img id="eventImage" src="" alt="Banner Image" class="img-fluid border rounded shadow-sm" />
                                 </div>
+                                <input type="file" class="form-control-file" id="imageUpload" name="imageUpload" accept="image/*" required>
+                            </div>
                                 <div class="form-group">
                                     <label for="eventName">Name</label>
-                                    <input type="text" class="form-control" id="eventName" name="eventName" required>
+                                    <input type="text" class="form-control" id="eventName" name="bannerTitle" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="eventDescription">Description</label>
-                                    <textarea class="form-control" id="eventDescription" name="eventDescription" required></textarea>
+                                    <textarea class="form-control" id="eventDescription" name="bannerDescription" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="activeStatus">Active Status</label>
+                                    <select class="form-control" id="activeStatus" name="activeStatus" required>
+                                        <option value="" disabled selected>Select Status</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+
+                                <div class ="form-group text-center">
+                                    <button type="submit" class="btn btn-lg btn-block btn-success" id="editBanner">Update Banner</button>
                                 </div>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success" id="editBanner">Update Banner</button>
+                        <div class="modal-footer text-center">
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-lg btn-block btn-danger" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>

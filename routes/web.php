@@ -20,6 +20,8 @@ Route::get('/fetchbanner',[BannerController::class ,'fetchBanners'])->name('bann
 Route::post('/storeBanners',[BannerController::class,'storeBanners'])->name('storeBanner')->middleware('auth');
 Route::put('/banners/{id}/status', [BannerController::class, 'toggleBannerStatus'])->name('toggleBannerStatus')->middleware('auth');
 Route::get('/banners/{id}', [BannerController::class, 'fetchBanner'])->name('fetchBanner')->middleware('auth');
+Route::put('/banners/edit',[BannerController::class,'editBanner'])->name('banner.edit')->middleware('auth');
+
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

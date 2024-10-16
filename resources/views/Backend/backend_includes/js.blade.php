@@ -104,6 +104,12 @@ $(document).ready(function() {
         },
         columns: [
             { data: 'id' },
+            {
+                data: 'image_path',
+                render: function(data, type, row) {
+                    // Display the image with the correct path
+                    return `<img src="${data}" alt="Banner Image" class="img-fluid" style="max-width: 100px;" />`;
+                },},
             { data: 'statusLabel' },
             { data: 'name' },
             { data: 'description' },

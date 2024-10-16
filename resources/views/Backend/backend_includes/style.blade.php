@@ -45,7 +45,7 @@
         /* Content margin */
         .content {
             width: 80%; /* Adjust this value as needed to control the width */
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
             transition: margin-left 0.3s ease;
              /* Centers the div horizontally */

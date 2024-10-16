@@ -58,6 +58,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>#</th>
+                        <th>Image</th>
                         <th>Status</th>
                         <th>Name</th>
                         <th>Description</th>

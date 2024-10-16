@@ -59,6 +59,7 @@ class BannerController extends Controller
                 $data[] = [
                     'id' => $banner->id,
                     'name' => $banner->title,
+                    'image_path'=>$banner->image_path,
                     'description' => $banner->description,
                     'status' => $banner->status,
                     'statusLabel' => $banner->status ? 'Active' : 'Inactive',

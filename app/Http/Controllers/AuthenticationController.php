@@ -3,13 +3,25 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+
 class AuthenticationController extends Controller
 {
     //
 
+
+    public function index(){
+        try{
+            $banners= Banner::where('status',1)->latest()->get();
+
+            return view('index',compact('banners'));
+        }catch(Exception $e){
+            return view($e,[],500);
+        }
+    }
     public function login(){
 
 

@@ -9,3 +9,4 @@
     <script src="assets/js/jquery.slicknav.js"></script>
     <script src="assets/js/nivo-lightbox.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>

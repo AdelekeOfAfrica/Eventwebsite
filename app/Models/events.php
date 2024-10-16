@@ -19,6 +19,7 @@ class events extends Model
         'price',
         'email',      
         'address',    
-        'phone',      
+        'phone',   
+        'event_type',   
     ];
 }

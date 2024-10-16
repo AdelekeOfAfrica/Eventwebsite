@@ -145,12 +145,87 @@
             <div class="carousel-caption d-md-block">
                 <p class="fadeInUp wow" data-wow-delay=".6s">{{ $banner->description }}</p>
                 <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $banner->title }}</h1>
-                <a href="" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s"></a>
-                <a href="" class="fadeInRight wow btn btn-border btn-lg" data-wow-delay=".6s"></a>
+                <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s" data-toggle="modal" data-target="#eventModal">Book us for an event</a>
+               
             </div>
         </div>
     @endforeach
 
+  <!-- modal for book an event  -->
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- Modal header -->
+      <div class="modal-header btn-common">
+        <h5 class="modal-title " id="eventModalLabel" style="color:white;">Book an Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <!-- Modal body (Form for event booking) -->
+      <div class="modal-body">
+      <div id="errorMessages" class="alert alert-danger" style="display: none;"></div>
+        <form id="eventBookingForm">
+          <div class="form-group">
+            <label for="eventName">Name</label>
+            <input type="text" class="form-control" id="eventName" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber">phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number " required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventType">Event Type</label>
+            <select class="form-control" id="eventType" required>
+              <option value="" disabled selected>Select event type</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Corporate Event">Corporate Event</option>
+              <option value="Birthday Party">Birthday Party</option>
+              <option value="Concert">Concert</option>
+              <option value="Conference">Conference</option>
+              <option value="Exhibition">Exhibition</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="eventDate">Date</label>
+            <input type="date" class="form-control" id="eventDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventLocation">Location</label>
+            <input type="text" class="form-control" id="eventLocation" placeholder="Enter event location" required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventCapacity">Capacity</label>
+            <input type="number" class="form-control" id="eventCapacity" placeholder="Enter expected capacity" required>
+          </div>
+
+          <div class="form-group">
+            <label for="eventPrice">Expected Budget</label>
+            <input type="number" class="form-control" id="eventPrice" placeholder="Enter event price" required>
+          </div>
+          
+          <!-- Submit button inside the form -->
+          <button type="submit" class="btn btn-common btn-lg btn-block">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of modal -->
+<script>
+  new WOW().init(); // Initialize WOW.js
+</script>
 </div>
 
     <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
@@ -177,8 +252,83 @@
         background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) as needed */
         z-index: 1; /* Ensures the overlay is above the image but below the text */
     }
+
+    #successModal .modal-content {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#successModal h4 {
+    font-weight: bold;
+    color: #28a745;
+}
+
+#successModal img {
+    border-radius: 50%;
+    border: 2px solid #28a745;
+}
+
     </style>
       <!-- Main Carousel Section End -->
 
     </header>
     <!-- Header Area wrapper End -->
+
+    <!-- Modal structure remains the same, including the form fields -->
+@include('template_includes.js')
+
+
+<script>
+$(document).ready(function() {
+    // Capture form submission
+    $('#eventBookingForm').on('submit', function(e) {
+        e.preventDefault();
+
+        // Clear previous error messages
+        $('#errorMessages').html('').hide();
+
+        // Gather form data
+        const formData = {
+            name: $('#eventName').val(),
+            phone_number: $('#phoneNumber').val(),
+            email: $('#email').val(),
+            event_type: $('#eventType').val(),
+            date: $('#eventDate').val(),
+            location: $('#eventLocation').val(),
+            capacity: $('#eventCapacity').val(),
+            price: $('#eventPrice').val(),
+            _token: '{{ csrf_token() }}' // CSRF token for security
+        };
+
+        // Send data via AJAX
+        $.ajax({
+            url: '{{ route("events.create") }}', // Laravel route for form submission
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                if(response.success) {
+                    // Show success message and reset the form
+                    alert('Event booked successfully, we will get back to you via phone call or email!');
+                    $('#eventModal').modal('hide');
+                    $('#eventBookingForm')[0].reset(); // Reset form fields
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle validation errors (status 422)
+                if(xhr.status === 422) {
+                    const errors = xhr.responseJSON.errors;
+                    let errorMessages = '<ul>';
+                    $.each(errors, function(key, value) {
+                        errorMessages += '<li>' + value[0] + '</li>'; // Get the first error for each field
+                    });
+                    errorMessages += '</ul>';
+
+                    // Display error messages in the modal
+                    $('#errorMessages').html(errorMessages).show();
+                }
+            }
+        });
+    });
+});
+</script>

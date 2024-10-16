@@ -22,6 +22,7 @@ Route::put('/banners/{id}/status', [BannerController::class, 'toggleBannerStatus
 Route::get('/banners/{id}', [BannerController::class, 'fetchBanner'])->name('fetchBanner')->middleware('auth');
 Route::put('/banners/edit',[BannerController::class,'editBanner'])->name('banner.edit')->middleware('auth');
 Route::post('/banners/create',[BannerController::class,'createBanner'])->name('banner.create')->middleware('auth');
+Route::post('/events/create', [EventsController::class, 'createEvent'])->name('events.create');
 
 // Route::get('/login',function (){
 //     return view('Backend.login');

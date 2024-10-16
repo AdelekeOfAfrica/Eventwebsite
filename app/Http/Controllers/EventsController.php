@@ -79,4 +79,43 @@ class EventsController extends Controller
     }
     
 
+    public function createEvent(Request $request){
+        try{
+
+        
+           
+          $validatedData =  $request->validate([
+                'name' => 'required|string|max:255',
+                'phone_number'=>'required',
+                'email' => 'required|email|max:255',
+                'event_type' => 'required|string|max:255',
+                'date' => 'required|date',
+                'location' => 'required|string|max:255',
+                'capacity' => 'required|integer|min:1',
+                'price' => 'required|numeric|min:0',
+            ]);
+
+            events::create([
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'phone' => $validatedData['phone_number'], // Correct field reference
+                'event_type' => $validatedData['event_type'],
+                'event_date' => $validatedData['date'],
+                'location' => $validatedData['location'],
+                'capacity' => $validatedData['capacity'],
+                'price' => $validatedData['price'],
+            ]);
+    
+            // Respond with a success message
+            return response()->json(['success' => true]);
+
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to book the event. Please try again later.',
+                'error' => $e->getMessage() // Optional: show the error message for debugging
+            ], 500);
+        }
+    }
+
 }

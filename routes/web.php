@@ -21,6 +21,7 @@ Route::post('/storeBanners',[BannerController::class,'storeBanners'])->name('sto
 Route::put('/banners/{id}/status', [BannerController::class, 'toggleBannerStatus'])->name('toggleBannerStatus')->middleware('auth');
 Route::get('/banners/{id}', [BannerController::class, 'fetchBanner'])->name('fetchBanner')->middleware('auth');
 Route::put('/banners/edit',[BannerController::class,'editBanner'])->name('banner.edit')->middleware('auth');
+Route::post('/banners/create',[BannerController::class,'createBanner'])->name('banner.create')->middleware('auth');
 
 // Route::get('/login',function (){
 //     return view('Backend.login');

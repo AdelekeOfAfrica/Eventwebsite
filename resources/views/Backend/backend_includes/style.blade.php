@@ -44,8 +44,13 @@
     
         /* Content margin */
         .content {
-            margin-left: 0;
+            width: 80%; /* Adjust this value as needed to control the width */
+            max-width: 1000px;
+            margin: 0 auto;
             transition: margin-left 0.3s ease;
+             /* Centers the div horizontally */
+             background-color: white;
+             padding:20px;
         }
     
         .content.active {
@@ -116,6 +121,71 @@
 .modalban .btn-primary:hover, .modalban .btn-success:hover {
     background-color: #0056b3; /* Darker blue on hover for primary button */
     color: #fff; /* Keep text color white on hover */
+}
+
+
+/* Apply specific styles only to tables with the bannerTable class */
+.bannerTable {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bannerTable th {
+    background-color: #343a40; /* Dark header background */
+    color: #ffffff; /* White text for the headers */
+    padding: 12px;
+    text-align: center;
+}
+
+.bannerTable td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bannerTable tbody tr:hover {
+    background-color: #f1f1f1; /* Hover effect on rows */
+}
+
+.bannerTable .btn {
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+@media (max-width: 767px) {
+    /* Stack table headers for smaller devices */
+    .bannerTable {
+        border: none;
+        width: 100%;
+    }
+
+    .bannerTable th, .bannerTable td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .bannerTable th {
+        display: none; /* Hide the headers for mobile */
+    }
+
+    .bannerTable td {
+        position: relative;
+        padding-left: 50%;
+        padding-right: 10px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .bannerTable td:before {
+        content: attr(data-label); /* Use the data-label attribute for responsiveness */
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        font-weight: bold;
+        color: #343a40;
+    }
 }
 
 

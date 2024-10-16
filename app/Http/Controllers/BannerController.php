@@ -108,49 +108,6 @@ class BannerController extends Controller
 }
 
 
-
-    // public function storeBanners(Request $request){
-    //     $request->validate([
-    //         'photo'=>'required|image|mimes:png,jpg,jpeg,svg,gif|max:2048'
-    //     ]);
-    //     $image =$request->file('photo');
-    //     $imageName =time().'.'. $image->getClientOriginalExtension();
-
-    //     $image->move('banners', $imageName);
-
-    //     $imgManager = new ImageManager(new Driver());
-    //     $thumbImage= $imgManager->read('banners/'.$imageName);
-
-    //     //resizing the image 
-    //     $thumbImage->resize(250,250);
-    //     //store the resized image
-    //     $response=  $thumbImage->save(public_path('banners/thumbnails'.$imageName));
-
-
-    //     if($response){
-    //         return  back()->with('success','image uploaded successfully');
-    //     }
-    // }
-
-//     public function editBanner(Request $request){
-//      try{
-//        $request->validate([
-//             // 'bannerId' => 'required|integer', // Ensure bannerId is an integer
-//             // 'imageUpload' => 'required|image|mimes:png,jpg,jpeg,svg,gif|max:2048',
-//             // 'bannerTitle' => 'required|string', // Ensure bannerTitle is a string
-//             // 'bannerDescription' => 'required|string', // Ensure bannerDescription is a string
-//             'activeStatus' => 'required|in:0,1'// Ensure activeStatus is boolean (checkbox)
-//         ]);
-    
-//         return ('test');
-    
-//         }catch(Exception $e){
-//             return view($e,[],500);
-//         }
-            
-    
-// }
-
 public function editBanner(Request $request)
 {
     try {
@@ -180,6 +137,42 @@ public function editBanner(Request $request)
     } catch (Exception $e) {
         return response()->json(['error' => $e->getMessage()], 500);
     }
+}
+
+public function createBanner(Request $request){
+    try{
+
+        $image = $request->file('imageUpload');
+      
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move('banners', $imageName);
+
+        $imgManager = new ImageManager(new Driver());
+        $thumbImage = $imgManager->read('banners/' . $imageName);
+        $thumbImage->resize(1920, 1080); 
+        $response = $thumbImage->save(public_path('banners/thumbnails/' . $imageName));
+
+        
+       
+        $newBanner = new Banner();
+        $newBanner->title = $request->input('bannerTitle');
+        $newBanner->description = $request->input('bannerDescription');
+        $newBanner->image_path = 'banners/thumbnails/' . $imageName;
+        $newBanner->status = $request->input('activeStatus', 0); // Set a default value if not provided
+        $newBanner->save();
+
+        if ($response) {
+            return back()->with('success', 'Banner information edited successfully.');
+        }
+
+       
+     } catch(Exception $e){
+        return view($e,[],500);
+    }
+
+
+
+
 }
 
 }

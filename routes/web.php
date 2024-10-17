@@ -23,6 +23,7 @@ Route::get('/banners/{id}', [BannerController::class, 'fetchBanner'])->name('fet
 Route::put('/banners/edit',[BannerController::class,'editBanner'])->name('banner.edit')->middleware('auth');
 Route::post('/banners/create',[BannerController::class,'createBanner'])->name('banner.create')->middleware('auth');
 Route::post('/events/create', [EventsController::class, 'createEvent'])->name('events.create');
+Route::get('/pictures',[EventsController::class,'pictures'])->name('pictures');
 
 // Route::get('/login',function (){
 //     return view('Backend.login');

@@ -118,4 +118,14 @@ class EventsController extends Controller
         }
     }
 
+    public function pictures(){
+        try{
+
+            return view('pictures');
+
+        }catch(Exception $e){
+            return view ($e,[],500);
+        }
+    }
+
 }

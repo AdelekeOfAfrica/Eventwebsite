@@ -20,77 +20,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    #header-wrap {
+        background: #f8f9fa;
+    }
+
+    .navbar {
+        padding: 5px 15px; /* Compact padding */
+        background-color: #fff; /* Background color */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+
+    .navbar-nav .nav-item {
+        padding: 0; /* Remove unnecessary padding */
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        color: black; /* Set text color to black by default */
+        padding: 5px 15px; /* Compact padding */
+        margin-top: 5px; /* Reduce margin */
+        margin-bottom: 5px;
+        line-height: 30px; /* Reduce line height */
+        text-transform: uppercase; /* Keep uppercase text */
+        background: transparent; /* Transparent background */
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+    }
+
+    .navbar-expand-lg .navbar-nav li > a:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+        width: 15px;
+        height: 2px;
+        background: #E91E63;
+        -webkit-transform: scale3d(0, 1, 1);
+        -moz-transform: scale3d(0, 1, 1);
+        transform: scale3d(0, 1, 1);
+        -webkit-transition: -webkit-transform 0.1s;
+        -moz-transition: -webkit-transform 0.1s;
+        transition: transform 0.1s;
+    }
+
+    .navbar-expand-lg .navbar-nav .active a:before {
+        -webkit-transform: scale3d(1, 1, 1);
+        -moz-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+
+    /* Hover and focus states */
+    .navbar-expand-lg .navbar-nav li a:hover,
+    .navbar-expand-lg .navbar-nav li .active > a,
+    .navbar-expand-lg .navbar-nav li a:focus {
+        color: #E91E63; /* Hover color */
+        outline: none;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link:focus,
+    .navbar-expand-lg .navbar-nav .nav-link:hover {
+        color: #E91E63 !important; /* Ensure hover/focus color */
+    }
+
+    /* Active link color */
+    .navbar li.active a.nav-link {
+        color: #E91E63 !important;
+    }
+
+    .mobile-menu {
+        display: none; /* Hide mobile menu by default */
+        position: absolute; /* Position it absolutely */
+        width: 100%; /* Full width */
+        background-color: #fff; /* Background color */
+        z-index: 1000; /* Above other elements */
+        border: 1px solid #ddd; /* Optional border */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        transition: max-height 0.3s ease; /* Smooth transition */
+        overflow: hidden; /* Hide overflow */
+    }
+
+    .mobile-menu.active {
+        display: block; /* Show mobile menu when active */
+    }
+
+    @media (max-width: 768px) {
+        .navbar-collapse {
+            display: none !important; /* Hide default navbar collapse */
         }
+    }
 
-        #header-wrap {
-            background: #f8f9fa;
-        }
+    .toggle-icon {
+        cursor: pointer; /* Pointer cursor for toggle */
+        padding: 10px; /* Padding for the toggle */
+        background: transparent; /* Transparent background */
+        border: none; /* No border */
+    }
 
-        .navbar-nav .nav-item {
-    padding: 0; /* Remove unnecessary padding */
-}
+    .toggle-icon:focus {
+        outline: none; /* Remove focus outline */
+    }
+</style>
 
-.navbar-nav .nav-link {
-    padding: 10px 15px; /* Adjust padding for menu items */
-    color: black !important; /* Default link color */
-    transition: all 0.3s ease; /* Smooth transition */
-    line-height: 1.2; /* Adjust line height to make it more compact */
-}
 
-.navbar-nav .nav-link:hover {
-    background-color: pink; /* Button color on hover */
-    color: white !important; /* Text color on hover */
-    border-radius: 5px; /* Rounded corners */
-}
 
-.navbar {
-    padding: 10px 15px; /* Adjust overall navbar padding to reduce height */
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
-
-.navbar-brand img {
-    height: 30px; /* Adjust logo size to make the navbar more compact */
-}
-
-        .mobile-menu {
-            display: none; /* Hide mobile menu by default */
-            position: absolute; /* Position it absolutely */
-            width: 100%; /* Full width */
-            background-color: #fff; /* Background color */
-            z-index: 1000; /* Above other elements */
-            border: 1px solid #ddd; /* Optional border */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
-            transition: max-height 0.3s ease; /* Smooth transition */
-            overflow: hidden; /* Hide overflow */
-        }
-
-        .mobile-menu.active {
-            display: block; /* Show mobile menu when active */
-        }
-
-        @media (max-width: 768px) {
-            .navbar-collapse {
-                display: none !important; /* Hide default navbar collapse */
-            }
-        }
-
-        .toggle-icon {
-            cursor: pointer; /* Pointer cursor for toggle */
-            padding: 10px; /* Padding for the toggle */
-            background: transparent; /* Transparent background */
-            border: none; /* No border */
-        }
-
-        .toggle-icon:focus {
-            outline: none; /* Remove focus outline */
-        }
-    </style>
-    <title>Navigation Bar</title>
+    <title>EvenTomy</title>
 </head>
 <body>
 <header id="header-wrap">

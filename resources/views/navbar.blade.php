@@ -1,5 +1,7 @@
 <!DOCTYPE html>
- <!-- Bootstrap CSS -->
+<html lang="en">
+<head>
+     <!-- Bootstrap CSS -->
  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
     <!-- Icon -->
     <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
@@ -14,31 +16,47 @@
     <!-- Responsive Style -->
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
+
         #header-wrap {
             background: #f8f9fa;
         }
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .navbar-brand img {
-            height: 30px; /* Adjust logo size */
-        }
-        .nav-link {
-            color: black !important; /* Default color */
-            padding: 10px 15px; /* Padding for links */
-            transition: all 0.3s ease; /* Smooth transition */
-        }
-        .nav-link:hover {
-            background-color: #007bff; /* Button color on hover */
-            color: white !important; /* Text color on hover */
-            border-radius: 5px; /* Rounded corners */
-        }
+
+        .navbar-nav .nav-item {
+    padding: 0; /* Remove unnecessary padding */
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px; /* Adjust padding for menu items */
+    color: black !important; /* Default link color */
+    transition: all 0.3s ease; /* Smooth transition */
+    line-height: 1.2; /* Adjust line height to make it more compact */
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: pink; /* Button color on hover */
+    color: white !important; /* Text color on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.navbar {
+    padding: 10px 15px; /* Adjust overall navbar padding to reduce height */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.navbar-brand img {
+    height: 30px; /* Adjust logo size to make the navbar more compact */
+}
+
         .mobile-menu {
             display: none; /* Hide mobile menu by default */
             position: absolute; /* Position it absolutely */
@@ -72,69 +90,69 @@
             outline: none; /* Remove focus outline */
         }
     </style>
-<html lang="en">
-  <header id="header-wrap">
-      <nav class="navbar navbar-expand-lg fixed-top">
-          <div class="container">
-              <div class="navbar-header">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <a href="index.html" class="navbar-brand"><img src="assets/img/sample.png" alt="Logo"></a>
-              </div>
-              <div class="collapse navbar-collapse" id="main-navbar">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item active">
-                          <a class="nav-link" href="#header-wrap">Home</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#about">About</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/login">Login</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#team">Speakers</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#gallery">Gallery</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#faq">Faq</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#sponsors">Sponsors</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#pricing">Pricing</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#google-map-area">Contact</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
+    <title>Navigation Bar</title>
+</head>
+<body>
+<header id="header-wrap">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="toggle-icon" id="toggle-button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><img src="assets/img/sample.png" alt="Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav ml-auto d-none d-lg-flex"> <!-- Desktop Menu -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#header-wrap">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sponsors">Sponsors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#google-map-area">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-          <!-- Mobile Menu Start -->
-          <ul class="mobile-menu list-unstyled" id="mobile-menu">
-              <li><a href="#header-wrap">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#schedules">Schedules</a></li>
-              <li><a href="#team">Speakers</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#faq">Faq</a></li>
-              <li><a href="#sponsors">Sponsors</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#google-map-area">Contact</a></li>
-          </ul>
-          <!-- Mobile Menu End -->
+        <!-- Mobile Menu Start -->
+        <ul class="mobile-menu list-unstyled" id="mobile-menu">
+            <li><a class="nav-link" href="#header-wrap">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#schedules">Schedules</a></li>
+            <li><a class="nav-link" href="#team">Speakers</a></li>
+            <li><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li><a class="nav-link" href="#faq">Faq</a></li>
+            <li><a class="nav-link" href="#sponsors">Sponsors</a></li>
+            <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            <li><a class="nav-link" href="#google-map-area">Contact</a></li>
+        </ul>
+        <!-- Mobile Menu End -->
+    </nav>
+</header>
 
-      </nav>
-  </header>
-    <body>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="assets/js/jquery-min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.countdown.min.js"></script>
@@ -145,12 +163,13 @@
     <script src="assets/js/nivo-lightbox.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-   
+
+<script>
+    // Toggle mobile menu visibility
     document.getElementById('toggle-button').addEventListener('click', function() {
         var mobileMenu = document.getElementById('mobile-menu');
         mobileMenu.classList.toggle('active'); // Toggle 'active' class
     });
 </script>
-    </body>
+</body>
 </html>

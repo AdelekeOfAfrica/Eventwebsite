@@ -27,7 +27,7 @@ Route::post('/banners/create',[BannerController::class,'createBanner'])->name('b
 Route::post('/events/create', [EventsController::class, 'createEvent'])->name('events.create');
 Route::get('/pictures',[EventsController::class,'pictures'])->name('pictures');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
-
+Route::get('/blogs',[BlogController::class,'blogs'])->name('blogs');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

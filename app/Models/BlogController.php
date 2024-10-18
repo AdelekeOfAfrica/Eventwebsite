@@ -11,6 +11,15 @@ class BlogController extends Model
     /** @use HasFactory<\Database\Factories\BlogControllerFactory> */
     use HasFactory;
 
+
+    public function blogs(){
+        try{
+            return view('blogs');
+        }catch(Exception $e){
+            return view($e,[],500);
+        }
+    }
+
     public function blog(){
         try{
             return view('blog');

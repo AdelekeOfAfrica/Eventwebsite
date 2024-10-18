@@ -506,7 +506,7 @@
         </div>
         <div class="row justify-content-center mt-3">
           <div class="col-xs-12">
-            <a href="#" class="btn btn-common">Browse All</a>
+            <a href="/pictures" class="btn btn-common">Browse All</a>
           </div>
         </div>
       </div>

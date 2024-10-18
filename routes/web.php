@@ -4,6 +4,8 @@ use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BannerController;
+use App\Models\BlogController;
+
 // Route::get('/', function () {
 //     return view('index');
 // });
@@ -24,6 +26,7 @@ Route::put('/banners/edit',[BannerController::class,'editBanner'])->name('banner
 Route::post('/banners/create',[BannerController::class,'createBanner'])->name('banner.create')->middleware('auth');
 Route::post('/events/create', [EventsController::class, 'createEvent'])->name('events.create');
 Route::get('/pictures',[EventsController::class,'pictures'])->name('pictures');
+Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 
 // Route::get('/login',function (){
 //     return view('Backend.login');

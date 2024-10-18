@@ -33,8 +33,8 @@
   @include('navbar')
 </head>
 <body>
-  <section id="gallery" class="section-padding" style="background-color: white;">
-    <div class="row justify-content-center">
+  <section id="pricing" class="section-padding" style="background-color: white;">
+    <div class="row justify-content-center"  style="background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
       <div class="col-lg-8">
         <!-- Blog Header -->
         <div class="blog-header text-center mt-3">
@@ -44,7 +44,19 @@
 
         <!-- Post Content -->
         <div class="post-content">
-          <img src="assets/img/sample.png" alt="Event Image" class="img-fluid">
+    
+            <div class="gallery-box">
+              <div class="img-thumb">
+              <img src="assets/img/sample.png" alt="Event Image" class="img-fluid">
+              </div>
+              <div class="overlay-box text-center">
+                <a class="lightbox" href="assets/img/sample.png">
+                  <i class="lni-plus" style="color:#FF1493;"></i>
+                </a>
+              </div>
+            </div>
+        
+          
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           
           <h3>Event Highlights</h3>
@@ -52,24 +64,45 @@
 
           <h3>Gallery</h3>
           <div class="row">
-            <div class="col-md-4 mb-4">
-              <img class="img-fluid" src="assets/img/sample.png" alt="Gallery Image">
+          <div class="col-md-6 col-sm-6 col-lg-4">
+            <div class="gallery-box">
+              <div class="img-thumb">
+                <img class="img-fluid" src="assets/img/sample.png" alt="">
+              </div>
+              <div class="overlay-box text-center">
+                <a class="lightbox" href="assets/img/sample.png">
+                  <i class="lni-plus" style="color:#FF1493;"></i>
+                </a>
+              </div>
             </div>
-            <div class="col-md-4 mb-4">
-              <img class="img-fluid" src="assets/img/sample.png" alt="Gallery Image">
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-lg-4">
+            <div class="gallery-box">
+              <div class="img-thumb">
+                <img class="img-fluid" src="assets/img/sample.png" alt="">
+              </div>
+              <div class="overlay-box text-center">
+                <a class="lightbox" href="assets/img/sample.png">
+                  <i class="lni-plus" style="color:#FF1493;"></i>
+                </a>
+              </div>
             </div>
-            <div class="col-md-4 mb-4">
-              <img class="img-fluid" src="assets/img/sample.png" alt="Gallery Image">
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-lg-4">
+            <div class="gallery-box">
+              <div class="img-thumb">
+                <img class="img-fluid" src="assets/img/sample.png" alt="">
+              </div>
+              <div class="overlay-box text-center">
+                <a class="lightbox" href="assets/img/sample.png">
+                  <i class="lni-plus" style="color:#FF1493;"></i>
+                </a>
+              </div>
             </div>
-            <div class="col-md-4 mb-4">
-              <img class="img-fluid" src="assets/img/sample.png" alt="Gallery Image">
-            </div>
-            <div class="col-md-4 mb-4">
-              <img class="img-fluid" src="assets/img/sample.png" alt="Gallery Image">
-            </div>
-            <div class="col-md-4 mb-4">
-              <img class="img-fluid" src="assets/img/sample.png" alt="Gallery Image">
-            </div>
+          </div>
+          
           </div>
         </div>
 

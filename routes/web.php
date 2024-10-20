@@ -30,6 +30,9 @@ Route::get('/pictures',[EventsController::class,'pictures'])->name('pictures');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::get('/blogs',[BlogController::class,'blogs'])->name('blogs');
 Route::get('/backend-pictures',[PicturesController::class,'BackendPictures'])->name('BackendPictures')->middleware('auth');
+Route::get('/backend-pictures/fetch',[PicturesController::class,'fetchBackendPictures'])->name('fetchBackendPictures')->middleware('auth');
+Route::get('/backend-pictures/getBackendPicture/{pictureId}',[PicturesController::class,'getBackendPicture'])->name('getBackendPicture')->middleware('auth');
+Route::put('/backend-pictures/update',[PicturesController::class,'updateBackendPictures'])->name('updateBackendPictures')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

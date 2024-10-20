@@ -33,16 +33,16 @@
                             <div class="card-body">
                                 <i class="fas fa-calendar-check fa-2x mb-3" style="color: white;"></i>
                                 <h5 class="card-title">Banners</h5>
-                                <h2 class="card-text">5</h2>
+                                <h2 class="card-text">{{$banners}}</h2>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4 card-summary-dashboard">
-                        <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
+                        <a href="/backend-pictures" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-image fa-2x mb-3" style="color: white;"></i>
                                 <h5 class="card-title">Pictures</h5>
-                                <h2 class="card-text">20</h2>
+                                <h2 class="card-text">{{$pictures}}</h2>
                             </div>
                         </a>
                     </div>

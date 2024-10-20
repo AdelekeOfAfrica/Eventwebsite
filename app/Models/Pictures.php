@@ -9,4 +9,5 @@ class Pictures extends Model
 {
     /** @use HasFactory<\Database\Factories\PicturesFactory> */
     use HasFactory;
+    protected $fillable =["name","image_path"];
 }

@@ -16,7 +16,7 @@ Route::post('/postlogin',[AuthenticationController::class,'postLogin'])->name('p
 Route::get('/dashboard',[AuthenticationController::class,'dashboard'])->middleware('auth');
 Route::post('/logout', [AuthenticationController::class,'logout'])->name('logout');
 Route::get('/events/data', [EventsController::class, 'getEventData'])->name('events.fetch')->middleware('auth');;
-Route::get('/events/{id}', [EventsController::class, 'show'])->name('events.show')->middleware('auth');
+Route::get('/events/{eventId}', [EventsController::class, 'eventDetail'])->name('eventDetail')->middleware('auth');
 Route::get('/users',[AuthenticationController::class,'users'])->name('users');
 Route::get('/bannersection',[BannerController::class ,'Banners'])->name('banners')->middleware('auth');
 Route::get('/fetchbanner',[BannerController::class ,'fetchBanners'])->name('banners.fetch')->middleware('auth');

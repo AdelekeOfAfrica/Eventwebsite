@@ -101,6 +101,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
+                            <p><strong>id:</strong> <span id="eventId"></span></p>
                                 <p><strong>Name:</strong> <span id="eventName"></span></p>
                                 <p><strong>Event Type:</strong> <span id="eventDescription"></span></p>
                                 <p><strong>Date:</strong> <span id="eventDate"></span></p>
@@ -119,3 +120,7 @@
         </section>
     </div>
     @include('Backend.backend_includes.js')
+
+<!-- End of event table -->
+</body>
+</html>

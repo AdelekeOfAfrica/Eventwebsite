@@ -38,7 +38,7 @@
                     searchable: false,
                     render: function(data, type, row) {
                         return `
-                            <button class="btn btn-primary view-button" data-id="${row.id}" data-toggle="modal" data-target="#eventModal">View</button>
+                            <button class="btn btn-primary view-button-event" data-id="${row.id}" data-toggle="modal" data-target="#eventModal">View</button>
 
                         `;
                     }
@@ -46,14 +46,15 @@
             ] 
         });
 
-        $('#eventsTable').on('click', '.view-button', function() {
+        $('#eventsTable').on('click', '.view-button-event', function() {
         const eventId = $(this).data('id');
+
     
             $.ajax({
-                url: `/events/${eventId}`, 
+                url: "{{ route('eventDetail', ['eventId' => ':eventId']) }}".replace(':eventId', eventId), 
                 type: 'GET',
                 success: function(event) {
-                
+                    $('#eventId').text(event.id);
                     $('#eventName').text(event.name);
                     $('#eventDescription').text(event.event_type);
                     $('#eventDate').text(event.event_date);

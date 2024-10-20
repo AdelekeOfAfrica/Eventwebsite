@@ -8,14 +8,17 @@ use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
-    //
+  
 
     public function getEventData(Request $request)
     {
         try {
-            // Query to fetch events
-            $query = events::orderBy('created_at', 'desc');
-    
+            // Query to fetch events, sorted by latest numeric ID
+            $query = events::query()->orderBy('id', 'desc'); // Sort by numeric ID
+        
+            // Total records before any filtering
+            $totalData = $query->count();
+        
             // Search filter
             if ($search = $request->input('search.value')) {
                 $query->where(function($q) use ($search) {
@@ -27,32 +30,29 @@ class EventsController extends Controller
                       ->orWhere('price', 'LIKE', "%{$search}%");
                 });
             }
-    
+        
+            // Count after filtering
+            $totalFiltered = $query->count();
+        
             // Pagination
             $start = $request->input('start', 0);
             $length = $request->input('length', 10);
             $events = $query->skip($start)->take($length)->get();
-    
-            // Total records
-            $totalData = events::count(); // Total count of events
-            $totalFiltered = $query->count(); // Count after filtering
-    
+        
             // Prepare data for response
             $data = [];
             foreach ($events as $event) {
                 $data[] = [
-                    'id'=>$event->id,
+                    'id' => $event->id,
                     'name' => $event->name,
                     'event_type' => $event->event_type,
                     'event_date' => $event->event_date,
                     'location' => $event->location,
                     'capacity' => $event->capacity,
                     'price' => $event->price,
-                    // 'editModalRoute' => route('editEvent', ['id' => $event->id]), // For modal edit
-                    // 'viewDetailsRoute' => route('viewEvent', ['id' => $event->id]),
                 ];
             }
-    
+        
             // Return response as JSON
             return response()->json([
                 'draw' => intval($request->input('draw')),
@@ -63,13 +63,20 @@ class EventsController extends Controller
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500); // Return error message
         }
-    }
 
-    public function show($id)
+
+   
+}
+
+    
+    
+
+
+    public function eventDetail($eventId)
     {
         try {
             // Fetch the event by ID
-            $event = events::findOrFail($id);
+            $event = events::findOrFail($eventId);
 
             // Return the event details as JSON
             return response()->json($event);

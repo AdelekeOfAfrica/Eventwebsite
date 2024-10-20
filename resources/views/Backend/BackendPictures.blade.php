@@ -92,7 +92,7 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('events.fetch') }}",
+                url: "{{ route('BackendPictures') }}",
                 type: 'GET'
             },
             columns: [

@@ -4,6 +4,7 @@ use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\PicturesController;
 use App\Models\BlogController;
 
 // Route::get('/', function () {
@@ -28,6 +29,7 @@ Route::post('/events/create', [EventsController::class, 'createEvent'])->name('e
 Route::get('/pictures',[EventsController::class,'pictures'])->name('pictures');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::get('/blogs',[BlogController::class,'blogs'])->name('blogs');
+Route::get('/backend-pictures',[PicturesController::class,'BackendPictures'])->name('BackendPictures')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

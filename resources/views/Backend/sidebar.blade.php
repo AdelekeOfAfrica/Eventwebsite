@@ -6,7 +6,7 @@
         <a class="nav-link m-2" href="{{ route('banners')}}">
             <i class="fas fa-info-circle"></i> Banners 
         </a>
-        <a class="nav-link m-2" href="/login">
+        <a class="nav-link m-2" href="/backend-pictures">
             <i class="fas fa-sign-in-alt"></i> Pictures
         </a>
         <a class="nav-link m-2" href="#team">

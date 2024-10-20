@@ -86,9 +86,10 @@
             }
     
             .table-container {
-                width: 100%; /* Full width for table on mobile */
-                padding: 0 15px; /* Add padding on sides */
-            }
+        max-width: 100%; /* Full width on small screens */
+        padding: 10px; /* Reduce padding for mobile */
+        margin: 15px auto; /* Adjust margins for mobile */
+    }
         }
 
         .card-summary {
@@ -155,37 +156,7 @@
 
 @media (max-width: 767px) {
     /* Stack table headers for smaller devices */
-    .bannerTable {
-        border: none;
-        width: 100%;
-    }
-
-    .bannerTable th, .bannerTable td {
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-
-    .bannerTable th {
-        display: none; /* Hide the headers for mobile */
-    }
-
-    .bannerTable td {
-        position: relative;
-        padding-left: 50%;
-        padding-right: 10px;
-        margin-bottom: 12px;
-        border-bottom: 1px solid #dee2e6;
-    }
-
-    .bannerTable td:before {
-        content: attr(data-label); /* Use the data-label attribute for responsiveness */
-        position: absolute;
-        left: 15px;
-        top: 12px;
-        font-weight: bold;
-        color: #343a40;
-    }
+   
 }
 
 

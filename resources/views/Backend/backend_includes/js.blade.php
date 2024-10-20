@@ -118,14 +118,18 @@ $(document).ready(function() {
                 orderable: false,
                 searchable: false,
                 render: function(data, type, row) {
-    const statusButton = row.status 
-        ? `<button class="btn btn-danger text-white" onclick="toggleStatus(${row.id}, 0)">
+                    const statusButton = row.status 
+    ? `<div style="margin: 0; padding: 0; display: inline-block;">
+          <button class="btn btn-danger text-white" onclick="toggleStatus(${row.id}, 0)">
             Deactivate
-          </button>` 
-        : `<button class="btn btn-success text-white" onclick="toggleStatus(${row.id}, 1)">
+          </button>
+       </div>`
+    : `<div style="margin: 0; padding: 0; display: inline-block;">
+          <button class="btn btn-success text-white" onclick="toggleStatus(${row.id}, 1)">
             Activate
-          </button>`;
-    
+          </button>
+       </div>`;
+
     return `
         ${statusButton}
         <button class="btn btn-primary view-button" data-id="${row.id}" data-toggle="modal" data-target="#bannerModal">

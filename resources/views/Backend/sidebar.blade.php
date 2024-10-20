@@ -7,7 +7,7 @@
             <i class="fas fa-info-circle"></i> Banners 
         </a>
         <a class="nav-link m-2" href="/login">
-            <i class="fas fa-sign-in-alt"></i> Login
+            <i class="fas fa-sign-in-alt"></i> Pictures
         </a>
         <a class="nav-link m-2" href="#team">
             <i class="fas fa-users"></i> Speakers

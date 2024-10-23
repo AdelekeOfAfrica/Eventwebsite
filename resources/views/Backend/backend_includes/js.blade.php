@@ -351,5 +351,71 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
     });
 </script>
 
+<!-- script to get sponsors details  -->
+<script>
+    $(document).ready(function() {
+    
+    $('#sponsorTable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ route('getAllSponsors') }}",
+            type: 'GET'
+        },
+        columns: [
+            { data: 'id' },
+            { data: 'name' },
+            {
+                data: 'image_path',
+                render: function(data, type, row) {
+                    // Display the image with the correct path
+                    return `<img src="${data}" alt="Banner Image" class="img-fluid" style="max-width: 100px;" />`;
+                },},
+           
+            {
+                data: null,
+                orderable: false,
+                searchable: false,
+                render: function(data, type, row) {
+                   
+    return `
+      
+        <button class="btn btn-primary view-button-sponsor" data-id="${row.id}" data-toggle="modal" data-target="#bannerModal">
+            View
+        </button>
+    `;
+}
+
+            }
+        ],
+    
+    });
+
+    $(document).on('click', '.view-button-sponsor', function() {
+        const pictureId = $(this).data('id');
+
+        // Fetch the banner details
+        $.ajax({
+            url: `/backend-pictures/getBackendPicture/${pictureId}`, // Your route to get the banner details
+            type: 'GET',
+            success: function(data) {
+                // Populate the form fields in the modal
+                $('#bannerId').val(data.id);
+                $('#eventName').val(data.name);
+               
+                $('#eventImage').attr('src', data.image_path); // Display the image in the modal
+                
+                // Show the modal
+                $('#bannerModal').modal('show');
+            },
+            error: function(xhr) {
+                alert('Error fetching banner details: ' + xhr.responseJSON.error);
+            }
+        });
+    });
+});
+</script>
+
+
 
 

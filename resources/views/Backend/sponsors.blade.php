@@ -14,7 +14,7 @@
         <div class="d-flex justify-content-end mb-2">
             <button class="btn btn-primary" id="createBannerBtn"  data-toggle="modal" data-target="#createEventPictureModal">Create New Entry</button>
         </div>
-            <table id="pictureTable" class="table bannerTable table-bordered table-striped table-hover mt-6">
+            <table id="sponsorTable" class="table bannerTable table-bordered table-striped table-hover mt-6">
                 <thead class="thead-dark">
                     <tr>
                         <th>#</th>

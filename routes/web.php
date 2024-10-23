@@ -33,6 +33,7 @@ Route::get('/backend-pictures',[PicturesController::class,'BackendPictures'])->n
 Route::get('/backend-pictures/fetch',[PicturesController::class,'fetchBackendPictures'])->name('fetchBackendPictures')->middleware('auth');
 Route::get('/backend-pictures/getBackendPicture/{pictureId}',[PicturesController::class,'getBackendPicture'])->name('getBackendPicture')->middleware('auth');
 Route::put('/backend-pictures/update',[PicturesController::class,'updateBackendPictures'])->name('updateBackendPictures')->middleware('auth');
+Route::post('/backend-pictures/create',[PicturesController::class,'createBackendPicture'])->name('createBackendPicture');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

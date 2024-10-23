@@ -253,3 +253,103 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
     });
 });
 </script>
+<!-- Modal for Image Upload -->
+<div class="modal fade modalban" id="createEventPictureModal" tabindex="-1" role="dialog" aria-labelledby="EventPictureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="eventPictureModalLabel">Create Event Picture</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for uploading the image -->
+                <form method="post" action="{{route('updateBackendPictures')}}" id="eventPictureForm" enctype="multipart/form-data">
+                    @csrf
+                    @method('POST')
+                    <input type="hidden" id="eventId" name="eventId">
+                    
+                    <!-- File Input for Image Upload -->
+                    <div class="form-group">
+                        <label for="Image">Image</label>
+                        <div id="eventImageContainer" class="mb-3">
+                            <!-- Image preview element -->
+                            <img id="singleEventPictureImage" src="" alt="Event Image" class="img-fluid border rounded shadow-sm" />
+                        </div>
+                        <!-- Input for selecting the image -->
+                        <input type="file" class="form-control-file" id="ImageUploadEvent" name="imageUpload" accept="image/*" required>
+                    </div>
+
+                    <!-- Input for Event Name -->
+                    <div class="form-group">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" class="form-control" id="eventName" name="eventTitle" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-lg btn-block btn-success" id="updateEventPicture">Update Event Picture</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-center">
+                <!-- Close Button -->
+                <div class="form-group text-center">
+                    <button type="button" class="btn btn-lg btn-block btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Image Preview and Debugging -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+
+        const imageInput = document.getElementById('ImageUploadEvent');
+        if (!imageInput) {
+           
+            return; 
+        }
+
+        imageInput.addEventListener('change', function(event) {
+            console.log('Change event triggered'); 
+
+            const file = event.target.files[0]; 
+            if (file) {
+                console.log('File selected:', file);
+
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    console.log('FileReader onload triggered.'); 
+                    console.log('Resulting Data URL:', e.target.result); 
+
+                    const imgPreview = document.getElementById('singleEventPictureImage');
+                    if (!imgPreview) {
+                        console.error('Image preview element not found.');
+                        return;
+                    }
+
+                    
+                    imgPreview.src = e.target.result;
+                  
+                };
+
+                reader.onerror = function(e) {
+                   // Debug log for any errors while reading the file
+                };
+
+                reader.readAsDataURL(file); // Read the file as a data URL (base64)
+                
+            } else {
+                console.warn('No file selected.'); // Debug warning if no file is selected
+            }
+        });
+    });
+</script>
+
+
+

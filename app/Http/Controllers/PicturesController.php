@@ -116,4 +116,35 @@ public function getBackendPicture($pictureId)
         return response()->json(['error' => $e->getMessage()], 500);
     }
 }
+
+public function createBackendPicture(Request $request){
+    try{
+
+        $image = $request->file('imageUpload');
+      
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move('pictures', $imageName);
+
+        $imgManager = new ImageManager(new Driver());
+        $thumbImage = $imgManager->read('pictures/' . $imageName);
+        $thumbImage->resize(520, 450);
+        $response = $thumbImage->save(public_path('pictures/thumbnails/' . $imageName));
+
+        $id = $request->input('bannerId');
+   
+        $editPicture = new Pictures();
+        $editPicture->name = $request->input('pictureName');
+       
+        $editPicture->image_path = 'pictures/thumbnails/' . $imageName;
+       
+        $editPicture->save();
+        if ($response) {
+            return back()->with('success', 'Event image added successfully.');
+        }
+    } 
+
+    catch(Exception $e){
+        return view($e,[],500);
+    }
+}
 }

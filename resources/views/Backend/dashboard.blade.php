@@ -47,10 +47,10 @@
                         </a>
                     </div>
                     <div class="col-md-4 card-summary-dashboard">
-                        <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
+                        <a href="/backend-sponsors" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-users fa-2x mb-3" style="color: white;"></i>
-                                <h5 class="card-title">Users</h5>
+                                <h5 class="card-title">Sponsors</h5>
                                 <h2 class="card-text">100</h2>
                             </div>
                         </a>

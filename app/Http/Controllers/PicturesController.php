@@ -147,4 +147,14 @@ public function createBackendPicture(Request $request){
         return view($e,[],500);
     }
 }
+
+    public function getSponsors(){
+    try{
+
+        return view('Backend.BackendPictures');
+
+    }catch(Exception $e){
+        return view($e,[],500);
+    }
+}
 }

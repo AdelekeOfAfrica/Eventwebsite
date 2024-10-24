@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\PicturesController;
+use App\Http\Controllers\SponsorsController;
 use App\Models\BlogController;
+use App\Models\sponsors;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -34,8 +36,8 @@ Route::get('/backend-pictures/fetch',[PicturesController::class,'fetchBackendPic
 Route::get('/backend-pictures/getBackendPicture/{pictureId}',[PicturesController::class,'getBackendPicture'])->name('getBackendPicture')->middleware('auth');
 Route::put('/backend-pictures/update',[PicturesController::class,'updateBackendPictures'])->name('updateBackendPictures')->middleware('auth');
 Route::post('/backend-pictures/create',[PicturesController::class,'createBackendPicture'])->name('createBackendPicture');
-Route::get('/backend-sponsors',[PicturesController::class,'getSponsors'])->name('getSponsors')->middleware('auth');
-Route::get('/backend-sponsors',[PicturesController::class,'getAllSponsors'])->name('getAllSponsors')->middleware('auth');
+Route::get('/backend-sponsors',[sponsorsController::class,'getSponsorsPage'])->name('getSponsors')->middleware('auth');
+Route::get('/backend-all-sponsors',[sponsorsController::class,'getAllSponsors'])->name('getAllSponsors')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

@@ -33,13 +33,13 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title" id="bannerModalLabel">Picture Details</h5>
+                            <h5 class="modal-title" id="bannerModalLabel">Sponsor Details</h5>
                             <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form  method="post" action="{{route('updateBackendPictures')}}" id="bannerForm" enctype="multipart/form-data">
+                            <form  method="post" action="{{route('updateSponsor')}}" id="bannerForm" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') 
                             <input type="hidden" id="bannerId" name="bannerId">
@@ -58,7 +58,7 @@
                                
 
                                 <div class ="form-group text-center">
-                                    <button type="submit" class="btn btn-lg btn-block btn-success" id="editBanner">Update Picture</button>
+                                    <button type="submit" class="btn btn-lg btn-block btn-success" id="editBanner">Update Sponsor Logo</button>
                                 </div>
                             </form>
                         </div>
@@ -77,14 +77,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="eventPictureModalLabel">Create Event Picture</h5>
+                <h5 class="modal-title" id="eventPictureModalLabel">Create Sponsor Logo</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Form for uploading the image -->
-                <form method="post" action="{{route('createBackendPicture')}}" id="eventPictureForm" enctype="multipart/form-data">
+                <form method="post" action="{{route('createSponsor')}}" id="eventPictureForm" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                     <input type="hidden" id="eventId" name="eventId">
@@ -108,7 +108,7 @@
 
                     <!-- Submit Button -->
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-lg btn-block btn-success" id="updateEventPicture">Create Event Picture</button>
+                        <button type="submit" class="btn btn-lg btn-block btn-success" id="updateEventPicture">Create Sponsor Logo</button>
                     </div>
                 </form>
             </div>

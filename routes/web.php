@@ -38,6 +38,10 @@ Route::put('/backend-pictures/update',[PicturesController::class,'updateBackendP
 Route::post('/backend-pictures/create',[PicturesController::class,'createBackendPicture'])->name('createBackendPicture');
 Route::get('/backend-sponsors',[sponsorsController::class,'getSponsorsPage'])->name('getSponsors')->middleware('auth');
 Route::get('/backend-all-sponsors',[sponsorsController::class,'getAllSponsors'])->name('getAllSponsors')->middleware('auth');
+Route::get('/backend/sponsor/{sponsorId}',[sponsorsController::class,'sponsorDetail'])->name('sponsorDetail')->middleware('auth');
+Route::put('/backend/update-sponsor',[sponsorsController::class,'updateSponsor'])->name('updateSponsor')->middleware('auth');
+Route::post('/backend/create-sponsor',[sponsorsController::class,'createSponsor'])->name('createSponsor')->middleware('auth');
+
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

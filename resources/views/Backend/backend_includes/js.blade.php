@@ -392,11 +392,11 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
     });
 
     $(document).on('click', '.view-button-sponsor', function() {
-        const pictureId = $(this).data('id');
+        const sponsorId = $(this).data('id');
 
         // Fetch the banner details
         $.ajax({
-            url: `/backend-pictures/getBackendPicture/${pictureId}`, // Your route to get the banner details
+            url: `/backend/sponsor/${sponsorId}`, // Your route to get the banner details
             type: 'GET',
             success: function(data) {
                 // Populate the form fields in the modal

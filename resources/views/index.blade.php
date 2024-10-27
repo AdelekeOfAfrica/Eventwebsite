@@ -15,161 +15,89 @@
 
 
     <!-- Coundown Section Start -->
-    <section class="countdown-timer section-padding">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="heading-count">
-              <h2 class="wow fadeInDown" data-wow-delay="0.2s">Event Will Start In</h2>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-              <div id="clock" class="time-count"></div>
-            </div>
-            <a href="pricing.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">Add to My Calender</a>
-          </div>
+    <section  class="countdown-timer section-padding">
+    <div class="container" style="background-color: white; padding: 60px 0;">
+        <div class="text-center mb-5">
+            <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size: 2.5em; font-weight: bold;">Testimonials</h1>
+            <p class="wow fadeInDown" data-wow-delay="0.2s" style="font-size: 1.2em; color: #888;">Eventomy.co</p>
         </div>
-      </div>
+
+        <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner text-center">
+                <!-- First Testimonial -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"This service was fantastic! It made my life so much easier."</p>
+                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">John Doe</h5>
+                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+
+                        </div>
+                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Second Testimonial -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Highly recommend to everyone looking for quality service!"</p>
+                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Jane Smith</h5>
+                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+
+                        </div>
+                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Third Testimonial -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Amazing experience with incredible customer support."</p>
+                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Alice Brown</h5>
+                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+
+                        </div>
+                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3">
+                    <div class="col-xs-12 text-center">
+                        <a href="/give-testimony" class="btn btn-common" >Give Testimony</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     </section>
     <!-- Coundown Section End -->
 
-     <!-- Services Section Start -->
-    <section id="services" class="services section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Why You Choose Us?</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
-          </div>
-        </div>
-        <div class="row services-wrapper">
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.2s">
-              <div class="icon">
-                <i class="lni-heart"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Get Inspired</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.4s">
-              <div class="icon">
-                <i class="lni-gallery"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Meet New Faces</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
-              <div class="icon">
-                <i class="lni-envelope"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Fresh Tech Insights</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-            <div class="services-item wow fadeInDown" data-wow-delay="0.8s">
-              <div class="icon">
-                <i class="lni-cup"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Networking Session</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-              </div>
-            </div>
-          </div>
-           <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-            <div class="services-item wow fadeInDown" data-wow-delay="1s">
-              <div class="icon">
-                <i class="lni-user"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Global Event</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-              </div>
-            </div>
-          </div>
-           <!-- Services item -->
-          <div class="col-md-6 col-lg-4 col-xs-12 padding-none">
-            <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
-              <div class="icon">
-                <i class="lni-bubble"></i>
-              </div>
-              <div class="services-content">
-                <h3><a href="#">Free Swags</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Services Section End -->
-
-
-    <!-- About Section Start -->
-    <!-- <section id="about" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">About This Events</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="about-item">
-              <img class="img-fluid" src="assets/img/about/img1.jpg" alt="">
-              <div class="about-text">
-                <h3><a href="#">Wanna Know Our Mission?</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                <a class="btn btn-common btn-rm" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="about-item">
-              <img class="img-fluid" src="assets/img/about/img2.jpg" alt="">
-              <div class="about-text">
-                <h3><a href="#">What you will learn?</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                <a class="btn btn-common btn-rm" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="about-item">
-              <img class="img-fluid" src="assets/img/about/img3.jpg" alt="">
-              <div class="about-text">
-                <h3><a href="#">What are the benifits?</a></h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                <a class="btn btn-common btn-rm" href="#">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- About Section End -->
+ 
 
     <!-- Counter Area Start-->
     <section class="counter-section section-padding">
@@ -210,7 +138,7 @@
         </div>
       </div>
     </section>
-    <!-- Counter Area End-->
+    <!-- Counter Area End -->
 
       <!-- Full-Screen Video Area Start -->
 <section id="video" class="section-padding mt-3" style="padding: 0;">
@@ -261,163 +189,6 @@
 </section>
 <!-- Full-Screen Video Area End -->
 
-    <!-- Team Section Start -->
-    <section id="team" class="section-padding text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Team</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">eventomy.co</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-4">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/10.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-behance" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">EvenTomy</a></h3>
-                <p>EvenTomy</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/10.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-behance" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">EvenTomy</a></h3>
-                <p>EvenTomy</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-
-          <div class="col-sm-6 col-md-6 col-lg-4">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/10.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-behance" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">EvenTomy</a></h3>
-                <p>EvenTomy</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-
-          <div class="col-sm-6 col-md-6 col-lg-4">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="0.8s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/10.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-behance" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">EvenTomy</a></h3>
-                <p>EvenTomy</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="1s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/10.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-behance" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">EvenTomy</a></h3>
-                <p>EvenTomy</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4">
-            <!-- Team Item Starts -->
-            <div class="team-item wow fadeInUp" data-wow-delay="1.2s">
-              <div class="team-img">
-                <img class="img-fluid" src="assets/img/team/10.png" alt="">
-                <div class="team-overlay">
-                  <div class="overlay-social-icon text-center">
-                    <ul class="social-icons">
-                      <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-linkedin-filled" aria-hidden="true"></i></a></li>
-                      <li><a href="#"><i class="lni-behance" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="info-text">
-                <h3><a href="#">EvenTomy</a></h3>
-                <p>EvenTomy</p>
-              </div>
-            </div>
-            <!-- Team Item Ends -->
-          </div>
-        </div>
-        <a href="speakers.html" class="btn btn-common mt-30 wow fadeInUp" data-wow-delay="1.9s">Click to see all staffs</a>
-      </div>
-    </section>
-    <!-- Team Section End -->
 
     <!-- Gallary Section Start -->
     <section id="gallery" class="section-padding">
@@ -513,126 +284,7 @@
     </section>
     <!-- Gallary Section End -->
 
-    <!-- Ask Question Section Start -->
-    <section id="faq" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Ask Question?</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-            <div class="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <div class="header-title" data-toggle="collapse" data-target="#questionOne" aria-expanded="true" aria-controls="collapseOne">
-                    <i class="lni-pencil"></i> How to make a new event?
-                  </div>
-                </div>
-                <div id="questionOne" class="collapse" aria-labelledby="headingOne" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <div class="header-title" data-toggle="collapse" data-target="#questionTwo" aria-expanded="false" aria-controls="questionTwo">
-                      <i class="lni-pencil"></i>  Which payment methods do you accept?
-                    </div>
-                </div>
-                <div id="questionTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <div class="header-title" data-toggle="collapse" data-target="#questionThree" aria-expanded="false" aria-controls="questionThree">
-                    <i class="lni-pencil"></i>  Which document can i bring to meeting?
-                  </div>
-                </div>
-                <div id="questionThree" class="collapse" aria-labelledby="headingThree" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <div class="header-title" data-toggle="collapse" data-target="#questionFour" aria-expanded="false" aria-controls="questionFour">
-                   <i class="lni-pencil"></i> Who can join at the live event venue?
-                  </div>
-                </div>
-                <div id="questionFour" class="collapse" aria-labelledby="headingThree" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-            <div class="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne2">
-                  <div class="header-title" data-toggle="collapse" data-target="#questionOne2" aria-expanded="true" aria-controls="collapseOne">
-                    <i class="lni-pencil"></i> How to make a new event?
-                  </div>
-                </div>
-                <div id="questionOne2" class="collapse" aria-labelledby="headingOne" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo2">
-                    <div class="header-title" data-toggle="collapse" data-target="#questionTwo2" aria-expanded="false" aria-controls="questionTwo">
-                      <i class="lni-pencil"></i>  Which payment methods do you accept?
-                    </div>
-                </div>
-                <div id="questionTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <div class="header-title" data-toggle="collapse" data-target="#questionFive" aria-expanded="false" aria-controls="questionFive">
-                    <i class="lni-pencil"></i>How to set price?
-                  </div>
-                </div>
-                <div id="questionFive" class="collapse" aria-labelledby="headingThree" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <div class="header-title" data-toggle="collapse" data-target="#questionSix" aria-expanded="false" aria-controls="questionSix">
-                    <i class="lni-pencil"></i>  What our price list?
-                  </div>
-                </div>
-                <div id="questionSix" class="collapse" aria-labelledby="headingThree" data-parent="#question">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Ask Question Section End -->
+  
 
     <!-- Sponsors Section Start -->
     <section id="sponsors" class="section-padding">
@@ -680,97 +332,7 @@
 
 
 
-    <!-- Ticket Pricing Area Start -->
-    <section id="pricing" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Pricing</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-            <div class="price-block-wrapper wow fadeInLeft" data-wow-delay="0.2s">
-              <div class="icon">
-                <i class="lni-write"></i>
-              </div>
-              <div class="colmun-title">
-                <h5>Basic Pass</h5>
-              </div>
-              <div class="price">
-                <h2>$29</h2>
-                <p>452 Tickets Available</p>
-              </div>
-              <div class="pricing-list">
-                <ul>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Entrance</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Coffee Break</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Lunch on all days</span></li>
-                  <li><i class="lni-close"></i><span class="text">Access to all areas</span></li>
-                  <li><i class="lni-close"></i><span class="text">Certificate</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Workshop</span></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-common">Buy Ticket</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-            <div class="price-block-wrapper wow fadeInUp" data-wow-delay="0.3s">
-              <div class="icon">
-                <i class="lni-layers"></i>
-              </div>
-              <div class="colmun-title">
-                <h5>Standard Pass</h5>
-              </div>
-              <div class="price">
-                <h2>$40</h2>
-                <p>452 Tickets Available</p>
-              </div>
-              <div class="pricing-list">
-                <ul>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Entrance</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Coffee Break</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Lunch on all days</span></li>
-                  <li><i class="lni-close"></i><span class="text">Access to all areas</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Certificate</span></li>
-                  <li><i class="lni-close"></i><span class="text">Workshop</span></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-common">Buy Ticket</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 col-xa-12 mb-3">
-            <div class="price-block-wrapper wow fadeInRight" data-wow-delay="0.4s">
-              <div class="icon">
-                <i class="lni-leaf"></i>
-              </div>
-              <div class="colmun-title">
-                <h5>Premium Pass</h5>
-              </div>
-              <div class="price">
-                <h2>$68</h2>
-                <p>452 Tickets Available</p>
-              </div>
-              <div class="pricing-list">
-                <ul>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Entrance</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Coffee Break</span></li>
-                  <li><i class="lni-close"></i><span class="text">Lunch on all days</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Access to all areas</span></li>
-                  <li><i class="lni-check-mark-circle"></i><span class="text">Certificate</span></li>
-                  <li><i class="lni-close"></i><span class="text">Workshop</span></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-common">Buy Ticket</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Ticket Pricing Area End -->
+
 
     <!-- Event Slides Section Start -->
     <section id="event-slides" class="section-padding">

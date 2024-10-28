@@ -471,9 +471,9 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
     });
 });
 </script> -->
-
 <script>
     $(document).ready(function() {
+        // Initialize DataTable
         $('#CommentTable').DataTable({
             processing: true,
             serverSide: true,
@@ -500,7 +500,7 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
             ]
         });
 
-        // Show confirmation modal on delete button click
+        // Show confirmation modal when delete button is clicked
         $(document).on('click', '.delete-button-testimonial', function() {
             const testimonialId = $(this).data('id');
             $('#deleteConfirmModal').data('id', testimonialId).modal('show');
@@ -509,9 +509,14 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
         // Handle delete confirmation button click
         $('#confirmDeleteButton').on('click', function() {
             const testimonialId = $('#deleteConfirmModal').data('id');
+            
+            // AJAX request to delete the testimonial
             $.ajax({
                 url: `/backend/delete-testimonials/${testimonialId}`,
                 type: 'DELETE',
+                data: {
+                    _token: '{{ csrf_token() }}'  // CSRF token included here
+                },
                 success: function(data) {
                     $('#deleteConfirmModal').modal('hide');
                     $('#CommentTable').DataTable().ajax.reload();
@@ -519,12 +524,14 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
                 },
                 error: function(xhr) {
                     $('#deleteConfirmModal').modal('hide');
-                    alert('Error deleting testimonial: ' + xhr.responseJSON.error);
+                    alert('Error deleting testimonial: ' + (xhr.responseJSON ? xhr.responseJSON.error : 'Unknown error'));
                 }
             });
         });
     });
 </script>
+
+
 
 
 

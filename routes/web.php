@@ -44,7 +44,7 @@ Route::put('/backend/update-sponsor',[sponsorsController::class,'updateSponsor']
 Route::post('/backend/create-sponsor',[sponsorsController::class,'createSponsor'])->name('createSponsor')->middleware('auth');
 Route::get('/backend/testimonialPage',[TestimonialController::class,'index'])->name('TestimonialPage')->middleware('auth');
 Route::get('/backend/testimonials',[TestimonialController::class,'show'])->name('Testimonials')->middleware('auth');
-Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'delete'])->name('deleteTestimonials')->middleware('auth');
+Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'destroy'])->name('deleteTestimonials')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

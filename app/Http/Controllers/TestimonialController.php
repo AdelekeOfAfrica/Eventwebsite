@@ -111,8 +111,23 @@ class TestimonialController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(testimonial $testimonial)
+    public function destroy($testimonialId)
     {
+        try{
         //
+        $testimonial = Testimonial::findOrFail($testimonialId);
+
+       
+        // Delete the testimonial
+        $testimonial->delete();
+
+        // Return success response
+        return response()->json(['success' => 'Testimonial deleted successfully.'], 200);
+    } catch (\Exception $e) {
+        // Return error response if something goes wrong
+        return response()->json(['error' => 'Failed to delete testimonial: ' . $e->getMessage()], 500);
+    
     }
+}
+
 }

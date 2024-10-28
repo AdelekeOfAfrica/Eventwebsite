@@ -12,8 +12,8 @@
         <a class="nav-link m-2" href="/backend-sponsors">
             <i class="fas fa-users"></i> Sponsors
         </a>
-        <a class="nav-link m-2" href="#gallery">
-            <i class="fas fa-images"></i> Gallery
+        <a class="nav-link m-2" href="/backend/testimonialPage">
+            <i class="fas fa-images"></i> Testimonials
         </a>
         <a class="nav-link m-2" href="#faq">
             <i class="fas fa-question-circle"></i> FAQ

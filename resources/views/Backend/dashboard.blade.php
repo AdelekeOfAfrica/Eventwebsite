@@ -51,16 +51,16 @@
                             <div class="card-body">
                                 <i class="fas fa-users fa-2x mb-3" style="color: white;"></i>
                                 <h5 class="card-title">Sponsors</h5>
-                                <h2 class="card-text">100</h2>
+                                <h2 class="card-text">{{ $sponsors }}</h2>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4 card-summary-dashboard">
-                        <a href="/users" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
+                        <a href="/backend/testimonialPage" class="card text-center border-light shadow-sm hover-card" style="background-color: #007bff; color: white;">
                             <div class="card-body">
                                 <i class="fas fa-user-tie fa-2x mb-3" style="color: white;"></i>
-                                <h5 class="card-title">Staff Profiles</h5>
-                                <h2 class="card-text">8</h2>
+                                <h5 class="card-title">Testimonials</h5>
+                                <h2 class="card-text">{{$testimonials}}</h2>
                             </div>
                         </a>
                     </div>

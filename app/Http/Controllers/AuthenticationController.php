@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\Banner;
 use App\Models\Pictures;
+use App\Models\sponsors;
+use App\Models\testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -51,7 +53,9 @@ class AuthenticationController extends Controller
     public function dashboard(){
         $banners = banner::count();
         $pictures =Pictures::count();
-        return view('Backend.dashboard',compact('banners','pictures'));
+        $sponsors=sponsors::count();
+        $testimonials=testimonial::count();
+        return view('Backend.dashboard',compact('banners','pictures','sponsors','testimonials'));
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\testimonial;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class TestimonialController extends Controller
     public function index()
     {
         //
+        return view('Backend.testimonials');
     }
 
     /**
@@ -34,10 +36,61 @@ class TestimonialController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(testimonial $testimonial)
+    public function show(Request $request)
     {
         //
-    }
+       
+            try {
+                // Query to fetch banners
+                $query = testimonial::orderBy('created_at', 'desc');
+    
+                // Search filter
+                if ($search = $request->input('search.value')) {
+                    $query->where(function($q) use ($search) {
+                        $q->where('name', 'LIKE', "%{$search}%")
+                        ->orWhere('comment', 'LIKE', "%{$search}%");
+                        
+                        // Check if search value is '0' or '1'
+                        if ($search === '0' || $search === '1') {
+                            $q->orWhere('status', '=', (int)$search);
+                        }
+                    });
+                }
+    
+                // Pagination
+                $start = $request->input('start', 0);
+                $length = $request->input('length', 10);
+                $testimonials = $query->skip($start)->take($length)->get();
+    
+                // Total records
+                $totalData = Testimonial::count(); // Total count of banners
+                $totalFiltered = $query->count(); // Count after filtering
+    
+                // Prepare data for response
+                $data = [];
+                foreach ($testimonials as $testimonial) {
+                    $data[] = [
+                        'id' => $testimonial->id,
+                        'name' => $testimonial->name,
+                        'comment'=>$testimonial->comment,
+                        
+                        'button' => '<button class="btn btn-danger" onclick="toggleStatus(' . $testimonial->id . ', 0)">Delete</button>'
+             
+                    ];
+                }
+    
+                // Return response as JSON
+                return response()->json([
+                    'draw' => intval($request->input('draw')),
+                    'recordsTotal' => $totalData,
+                    'recordsFiltered' => $totalFiltered,
+                    'data' => $data,
+                ]);
+            } catch (Exception $e) {
+                return response()->json(['error' => $e->getMessage()], 500); // Return error message
+            }
+        }
+    
 
     /**
      * Show the form for editing the specified resource.

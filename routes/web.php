@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\SponsorsController;
+use App\Http\Controllers\TestimonialController;
 use App\Models\BlogController;
 use App\Models\sponsors;
 
@@ -41,7 +42,9 @@ Route::get('/backend-all-sponsors',[sponsorsController::class,'getAllSponsors'])
 Route::get('/backend/sponsor/{sponsorId}',[sponsorsController::class,'sponsorDetail'])->name('sponsorDetail')->middleware('auth');
 Route::put('/backend/update-sponsor',[sponsorsController::class,'updateSponsor'])->name('updateSponsor')->middleware('auth');
 Route::post('/backend/create-sponsor',[sponsorsController::class,'createSponsor'])->name('createSponsor')->middleware('auth');
-
+Route::get('/backend/testimonialPage',[TestimonialController::class,'index'])->name('TestimonialPage')->middleware('auth');
+Route::get('/backend/testimonials',[TestimonialController::class,'show'])->name('Testimonials')->middleware('auth');
+Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'delete'])->name('deleteTestimonials')->middleware('auth');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

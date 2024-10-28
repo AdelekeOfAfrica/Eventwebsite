@@ -416,6 +416,116 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
 });
 </script>
 
+<!-- script to fetch all the tables  -->
+<!-- script to get sponsors details  -->
+<!-- <script>
+    $(document).ready(function() {
+    
+    $('#CommentTable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ route('Testimonials') }}",
+            type: 'GET'
+        },
+        columns: [
+            { data: 'id' },
+            { data: 'name' },
+            {data: 'comment' },
+           
+            {
+                data: null,
+                orderable: false,
+                searchable: false,
+                render: function(data, type, row) {
+                   
+    return `
+      
+        <button class="btn btn-danger delete-button-testimonial" data-id="${row.id}">
+            Delete
+        </button>
+    `;
+}
+
+            }
+        ],
+    
+    });
+
+    $(document).on('click', '.delete-button-testimonial', function() {
+        const testimonialId = $(this).data('id');
+  
+
+        // Fetch the banner details
+        $.ajax({
+            url: `/backend/delete-testimonials/${testimonialId}`, // Your route to get the banner details
+            type: 'Delete',
+            success: function(data) {
+                // Populate the form fields in the modal
+              
+            },
+            error: function(xhr) {
+                alert('Error fetching banner details: ' + xhr.responseJSON.error);
+            }
+        });
+    });
+});
+</script> -->
+
+<script>
+    $(document).ready(function() {
+        $('#CommentTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: "{{ route('Testimonials') }}",
+                type: 'GET'
+            },
+            columns: [
+                { data: 'id' },
+                { data: 'name' },
+                { data: 'comment' },
+                {
+                    data: null,
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, row) {
+                        return `
+                            <button class="btn btn-danger delete-button-testimonial" data-id="${row.id}">
+                                Delete
+                            </button>
+                        `;
+                    }
+                }
+            ]
+        });
+
+        // Show confirmation modal on delete button click
+        $(document).on('click', '.delete-button-testimonial', function() {
+            const testimonialId = $(this).data('id');
+            $('#deleteConfirmModal').data('id', testimonialId).modal('show');
+        });
+
+        // Handle delete confirmation button click
+        $('#confirmDeleteButton').on('click', function() {
+            const testimonialId = $('#deleteConfirmModal').data('id');
+            $.ajax({
+                url: `/backend/delete-testimonials/${testimonialId}`,
+                type: 'DELETE',
+                success: function(data) {
+                    $('#deleteConfirmModal').modal('hide');
+                    $('#CommentTable').DataTable().ajax.reload();
+                    alert('Testimonial deleted successfully.');
+                },
+                error: function(xhr) {
+                    $('#deleteConfirmModal').modal('hide');
+                    alert('Error deleting testimonial: ' + xhr.responseJSON.error);
+                }
+            });
+        });
+    });
+</script>
+
 
 
 

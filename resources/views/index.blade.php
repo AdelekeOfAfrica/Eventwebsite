@@ -13,89 +13,41 @@
   <body>
 @section('content')
 
-
-    <!-- Coundown Section Start -->
-    <section  class="countdown-timer section-padding">
-    <div class="container" style="background-color: white; padding: 60px 0;">
-        <div class="text-center mb-5">
-            <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size: 2.5em; font-weight: bold;">Testimonials</h1>
-            <p class="wow fadeInDown" data-wow-delay="0.2s" style="font-size: 1.2em; color: #888;">Eventomy.co</p>
+<!-- Event Slides Section Start -->
+<section id="event-slides" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Elevate Your Event with Expertise</h1>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">Join Us for the Global Grand Event on Digital Design</p>
         </div>
-
-        <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner text-center">
-                <!-- First Testimonial -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
-                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"This service was fantastic! It made my life so much easier."</p>
-                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">John Doe</h5>
-                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
-
-                        </div>
-                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Second Testimonial -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
-                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Highly recommend to everyone looking for quality service!"</p>
-                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Jane Smith</h5>
-                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
-
-                        </div>
-                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Third Testimonial -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
-                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Amazing experience with incredible customer support."</p>
-                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Alice Brown</h5>
-                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
-
-                        </div>
-                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center mt-3">
-                    <div class="col-xs-12 text-center">
-                        <a href="/give-testimony" class="btn btn-common" >Give Testimony</a>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
+        <div class="video">
+          <img class="img-fluid" src="assets/img/about/10.png" alt="Event Image">
         </div>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
+        <p class="intro-desc">
+          Transform your vision into reality! At [Your Company Name], we specialize in crafting unforgettable experiences that resonate with your audience. Our passion for detail and commitment to excellence ensures every aspect of your event is executed flawlessly.
+        </p>
+        <h2 class="intro-title">Why Choose Us?</h2>
+        <ul class="list-specification">
+          <li><i class="lni-check-mark-circle"></i> Tailored Event Solutions that Fit Your Needs</li>
+          <li><i class="lni-check-mark-circle"></i> Expert Planning and Coordination Every Step of the Way</li>
+          <li><i class="lni-check-mark-circle"></i> Innovative Ideas that Captivate and Engage</li>
+          <li><i class="lni-check-mark-circle"></i> Trusted by Leading Brands to Deliver Excellence</li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
+<!-- Event Slides Section End -->
 
 
-    </section>
-    <!-- Coundown Section End -->
+
+
 
  
 
@@ -284,7 +236,88 @@
     </section>
     <!-- Gallary Section End -->
 
-  
+    <!-- testimonial Section Start -->
+    <section  class="countdown-timer section-padding">
+    <div class="container" style="background-color: white; padding: 60px 0;">
+        <div class="text-center mb-5">
+            <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size: 2.5em; font-weight: bold;">Testimonials</h1>
+            <p class="wow fadeInDown" data-wow-delay="0.2s" style="font-size: 1.2em; color: #888;">Eventomy.co</p>
+        </div>
+
+        <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner text-center">
+                <!-- First Testimonial -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"This service was fantastic! It made my life so much easier."</p>
+                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">John Doe</h5>
+                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+
+                        </div>
+                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Second Testimonial -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Highly recommend to everyone looking for quality service!"</p>
+                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Jane Smith</h5>
+                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+
+                        </div>
+                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Third Testimonial -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Amazing experience with incredible customer support."</p>
+                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Alice Brown</h5>
+                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+
+                        </div>
+                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3">
+                    <div class="col-xs-12 text-center">
+                        <a href="/give-testimony" class="btn btn-common" >Give Testimony</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+    <!-- testimonial Section End -->
 
     <!-- Sponsors Section Start -->
     <section id="sponsors" class="section-padding">
@@ -334,36 +367,7 @@
 
 
 
-    <!-- Event Slides Section Start -->
-    <section id="event-slides" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">CEO Speech</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
-            <div class="video">
-              <img class="img-fluid" src="assets/img/about/about.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
-            <p class="intro-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
-            </p>
-            <h2 class="intro-title">Check List</h2>
-            <ul class="list-specification">
-              <li><i class="lni-check-mark-circle"></i> Lorem Ipsum is simply dummy</li>
-              <li><i class="lni-check-mark-circle"></i> Ipsum passages, and more recently</li>
-              <li><i class="lni-check-mark-circle"></i> PageMaker including versions</li>
-              <li><i class="lni-check-mark-circle"></i> Lorem Ipsum is simply dummy</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Event Slides Section End -->
+  
 
     <!-- Blog Section Start -->
     <section id="blog" class="section-padding">

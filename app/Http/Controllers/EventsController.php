@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\events;
 use Exception;
+use App\Models\events;
+use App\Models\Pictures;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
@@ -128,7 +129,8 @@ class EventsController extends Controller
     public function pictures(){
         try{
 
-            return view('pictures');
+            $pictures = Pictures::paginate(10);
+            return view('frontend-pictures',compact('pictures'));
 
         }catch(Exception $e){
             return view ($e,[],500);

@@ -171,7 +171,7 @@
     </div>
     <div class="row justify-content-center mt-3">
       <div class="col-xs-12">
-        <a href="/pictures" class="btn btn-common">Browse All</a>
+        <a href="/front-end/pictures" class="btn btn-common">Browse All</a>
       </div>
     </div>
   </div>
@@ -276,20 +276,20 @@
           <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="blog-item">
               <div class="blog-image">
-                <a href="#">
+                <a href="/blogs">
                   <img class="img-fluid" src="assets/img/blog/img-1.jpg" alt="">
                 </a>
               </div>
               <div class="descr">
                 <div class="tag">Design</div>
                 <h3 class="title">
-                  <a href="single-blog.html">
+                  <a href="/blog">
                     The 9 Design Trends You Need to Know
                   </a>
                 </h3>
                 <div class="meta-tags">
                   <span class="date">Jan 20, 2018</span>
-                  <span class="comments">| <a href="#"> by Cindy Jefferson</a></span>
+                  <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
                 </div>
               </div>
             </div>
@@ -304,13 +304,13 @@
               <div class="descr">
                 <div class="tag">Design</div>
                 <h3 class="title">
-                  <a href="single-blog.html">
+                  <a href="/blog">
                     The 9 Design Trends You Need to Know
                   </a>
                 </h3>
                 <div class="meta-tags">
                   <span class="date">Jan 20, 2018 </span>
-                  <span class="comments">| <a href="#"> by Cindy Jefferson</a></span>
+                  <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
                 </div>
               </div>
             </div>
@@ -318,26 +318,26 @@
           <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="blog-item">
               <div class="blog-image">
-                <a href="#">
+                <a href="/blog">
                   <img class="img-fluid" src="assets/img/blog/img-3.jpg" alt="">
                 </a>
               </div>
               <div class="descr">
                 <div class="tag">Design</div>
                 <h3 class="title">
-                  <a href="single-blog.html">
+                  <a href="/blog">
                     The 9 Design Trends You Need to Know
                   </a>
                 </h3>
                 <div class="meta-tags">
                   <span class="date">Jan 20, 2018</span>
-                  <span class="comments">| <a href="#"> by Cindy Jefferson</a></span>
+                  <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">Read More News</a>
+            <a href="/blogs" class="btn btn-common">Read More News</a>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ Route::get('/banners/{id}', [BannerController::class, 'fetchBanner'])->name('fet
 Route::put('/banners/edit',[BannerController::class,'editBanner'])->name('banner.edit')->middleware('auth');
 Route::post('/banners/create',[BannerController::class,'createBanner'])->name('banner.create')->middleware('auth');
 Route::post('/events/create', [EventsController::class, 'createEvent'])->name('events.create');
-Route::get('/pictures',[EventsController::class,'pictures'])->name('pictures');
+Route::get('/front-end-pictures',[EventsController::class,'pictures'])->name('pictures');
 Route::get('/blog',[BlogController::class,'blog'])->name('blog');
 Route::get('/blogs',[BlogController::class,'blogs'])->name('blogs');
 Route::get('/backend-pictures',[PicturesController::class,'BackendPictures'])->name('BackendPictures')->middleware('auth');

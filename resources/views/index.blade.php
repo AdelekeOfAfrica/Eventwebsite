@@ -25,7 +25,7 @@
       </div>
       <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
         <div class="video">
-          <img class="img-fluid" src="assets/img/about/10.png" alt="Event Image">
+          <img class="img-fluid" src="assets/img/about/10.jpg" alt="Event Image">
         </div>
       </div>
       <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
@@ -319,45 +319,49 @@
     </section>
     <!-- testimonial Section End -->
 
-    <!-- Sponsors Section Start -->
-    <section id="sponsors" class="section-padding">
-      <div class="container">
+    
+<!-- Sponsors Section Start -->
+<section id="sponsors" class="section-padding">
+    <div class="container">
         <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Sponsores</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+            <div class="col-12">
+                <div class="section-title-header text-center">
+                    <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Sponsors</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="row mb-30 text-center wow fadeInDown" data-wow-delay="0.3s">
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="spnsors-logo">
-              <a href="#"><img class="img-fluid" src="assets/img/sponsors/logo-01.png" alt=""></a>
+
+        <div id="sponsor-slide" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($sponsors->chunk(4) as $chunkIndex => $chunk)
+                    <div class="carousel-item @if($chunkIndex == 0) active @endif">
+                        <div class="row mb-30 text-center">
+                            @foreach ($chunk as $sponsor)
+                                <div class="col-md-3 col-sm-3 col-xs-12 wow fadeInUp" data-wow-delay="{{ $loop->index * 0.1 }}s">
+                                    <div class="sponsors-logo text-center">
+                                        <img class="img-fluid" src="{{ asset($sponsor->image_path) }}" alt="Sponsor Logo">
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
             </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="spnsors-logo">
-              <a href="#"><img class="img-fluid" src="assets/img/sponsors/logo-02.png" alt=""></a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="spnsors-logo">
-              <a href="#"><img class="img-fluid" src="assets/img/sponsors/logo-03.png" alt=""></a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="spnsors-logo">
-              <a href="#"><img class="img-fluid" src="assets/img/sponsors/logo-04.png" alt=""></a>
-            </div>
-          </div>
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">become a sponsor</a>
-          </div>
+
+            <a class="carousel-control-prev" href="#sponsor-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#sponsor-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-      </div>
-    </section>
-    <!-- Sponsors Section End -->
+    </div>
+</section>
+<!-- Sponsors Section End -->
+
 
 
 

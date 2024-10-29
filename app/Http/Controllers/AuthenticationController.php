@@ -19,10 +19,12 @@ class AuthenticationController extends Controller
     public function index(){
         try{
             $banners= Banner::where('status',1)->latest()->get();
-            $sponsors = Sponsors::all();
+            $sponsors = Sponsors::inRandomOrder()->take(4)->get(); 
+            $testimonials = testimonial::all();
+            $pictures = Pictures::inRandomOrder()->take(6)->get(); 
 
 
-            return view('index',compact('banners','sponsors'));
+            return view('index',compact('banners','sponsors','testimonials','pictures'));
         }catch(Exception $e){
             return view($e,[],500);
         }

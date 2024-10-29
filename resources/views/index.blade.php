@@ -30,7 +30,7 @@
       </div>
       <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
         <p class="intro-desc">
-          Transform your vision into reality! At [Your Company Name], we specialize in crafting unforgettable experiences that resonate with your audience. Our passion for detail and commitment to excellence ensures every aspect of your event is executed flawlessly.
+          Transform your vision into reality! At Eventomy, we specialize in crafting unforgettable experiences that resonate with your audience. Our passion for detail and commitment to excellence ensures every aspect of your event is executed flawlessly.
         </p>
         <h2 class="intro-title">Why Choose Us?</h2>
         <ul class="list-specification">
@@ -142,102 +142,45 @@
 <!-- Full-Screen Video Area End -->
 
 
-    <!-- Gallary Section Start -->
-    <section id="gallery" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">our event gallery</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/gallery/1.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/gallery/1.png">
-                  <i class="lni-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="ccol-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/gallery/2.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/gallery/2.png">
-                  <i class="lni-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="ccol-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/gallery/3.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/gallery/3.png">
-                  <i class="lni-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="ccol-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/gallery/4.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/gallery/4.png">
-                  <i class="lni-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="ccol-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/gallery/5.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/gallery/5.png">
-                  <i class="lni-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="ccol-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/gallery/6.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/gallery/6.png">
-                  <i class="lni-plus"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-          <div class="col-xs-12">
-            <a href="/pictures" class="btn btn-common">Browse All</a>
-          </div>
+   <!-- Gallery Section Start -->
+<section id="gallery" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Event Gallery</h1>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
         </div>
       </div>
-    </section>
-    <!-- Gallary Section End -->
+    </div>
+    <div class="row">
+      @foreach($pictures as $picture)
+        <div class="col-md-6 col-sm-6 col-lg-4">
+          <div class="gallery-box">
+            <div class="img-thumb">
+              <img class="img-fluid" src="{{ asset($picture->image_path) }}" alt="">
+            </div>
+            <div class="overlay-box text-center">
+              <a class="lightbox" href="{{ asset($picture->image_path) }}">
+                <i class="lni-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="col-xs-12">
+        <a href="/pictures" class="btn btn-common">Browse All</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Gallery Section End -->
+
 
     <!-- testimonial Section Start -->
-    <section  class="countdown-timer section-padding">
+    <section class="countdown-timer section-padding">
     <div class="container" style="background-color: white; padding: 60px 0;">
         <div class="text-center mb-5">
             <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size: 2.5em; font-weight: bold;">Testimonials</h1>
@@ -246,77 +189,36 @@
 
         <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner text-center">
-                <!-- First Testimonial -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
-                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"This service was fantastic! It made my life so much easier."</p>
-                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">John Doe</h5>
-                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
-
+                @foreach ($testimonials as $testimonial)
+                    <div class="carousel-item @if($loop->first) active @endif">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
+                                <p style="font-size: 1.2em; font-style: italic; color: #555;">"{{ $testimonial->comment }}"</p>
+                                <h5 style="font-weight: bold; color: #333; margin-top: 15px;">{{ $testimonial->name }}</h5>
+                                <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
+                            </div>
+                            <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
-                </div>
-
-                <!-- Second Testimonial -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
-                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Highly recommend to everyone looking for quality service!"</p>
-                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Jane Smith</h5>
-                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
-
-                        </div>
-                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Third Testimonial -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <a class="carousel-control-prev" href="#testimonial-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 10px;">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <div class="testimonial-content text-center" style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); padding: 30px; width: 80%; max-width: 600px;">
-                            <p style="font-size: 1.2em; font-style: italic; color: #555;">"Amazing experience with incredible customer support."</p>
-                            <h5 style="font-weight: bold; color: #333; margin-top: 15px;">Alice Brown</h5>
-                            <i class="lni-user" style="font-size: 80px; color: pink; margin-top: 15px;"></i>
-
-                        </div>
-                        <a class="carousel-control-next" href="#testimonial-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-left: 10px;">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
 
                 <div class="row justify-content-center mt-3">
                     <div class="col-xs-12 text-center">
-                        <a href="/give-testimony" class="btn btn-common" >Give Testimony</a>
+                        <a href="/give-testimony" class="btn btn-common">Give Testimony</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-
-    </section>
     <!-- testimonial Section End -->
 
     
@@ -331,35 +233,23 @@
                 </div>
             </div>
         </div>
-
-        <div id="sponsor-slide" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                @foreach ($sponsors->chunk(4) as $chunkIndex => $chunk)
-                    <div class="carousel-item @if($chunkIndex == 0) active @endif">
-                        <div class="row mb-30 text-center">
-                            @foreach ($chunk as $sponsor)
-                                <div class="col-md-3 col-sm-3 col-xs-12 wow fadeInUp" data-wow-delay="{{ $loop->index * 0.1 }}s">
-                                    <div class="sponsors-logo text-center">
-                                        <img class="img-fluid" src="{{ asset($sponsor->image_path) }}" alt="Sponsor Logo">
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+        <div class="row mb-30 text-center wow fadeInDown" data-wow-delay="0.3s">
+            @foreach ($sponsors as $sponsor)
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="spnsors-logo">
+                        <a href="#">
+                            <img class="img-fluid" src="{{ asset($sponsor->image_path) }}" alt="Sponsor Logo">
+                        </a>
                     </div>
-                @endforeach
+                </div>
+            @endforeach
+            <div class="col-12 text-center">
+                <a href="#" class="btn btn-common">Become a Sponsor</a>
             </div>
-
-            <a class="carousel-control-prev" href="#sponsor-slide" role="button" data-slide="prev" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px;">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#sponsor-slide" role="button" data-slide="next" style="background-color: pink; border-radius: 50%; width: 40px; height: 40px;">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
 </section>
+
 <!-- Sponsors Section End -->
 
 

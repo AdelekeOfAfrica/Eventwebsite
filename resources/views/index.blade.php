@@ -20,7 +20,7 @@
       <div class="col-12">
         <div class="section-title-header text-center">
           <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Elevate Your Event with Expertise</h1>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">Join Us for the Global Grand Event on Digital Design</p>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">Eventomie.co</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">

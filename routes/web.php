@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\EventsController;
+use App\Models\sponsors;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\SponsorsController;
 use App\Http\Controllers\TestimonialController;
-use App\Models\BlogController;
-use App\Models\sponsors;
+use App\Http\Controllers\AuthenticationController;
 
 // Route::get('/', function () {
 //     return view('index');

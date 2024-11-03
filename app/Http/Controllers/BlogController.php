@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Exception;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class BlogController extends Model
+
+
+class BlogController extends Controller
 {
     /** @use HasFactory<\Database\Factories\BlogControllerFactory> */
-    use HasFactory;
+  
 
 
     public function blogs(){

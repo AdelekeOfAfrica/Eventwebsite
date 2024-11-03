@@ -294,89 +294,54 @@
 
   
 
-    <!-- Blog Section Start -->
-    <section id="blog" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Latest News & Articles</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-            </div>
+  <!-- Blog Section Start -->
+  <section id="blog" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Latest News & Articles</h1>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+        </div>
+      </div>
+
+      @foreach($blogs as $blog)
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="blog-item">
+          <div class="blog-image">
+            <a href="{{ route('blog', ['id' => $blog->id]) }}">
+                <img class="img-fluid" src="{{ asset($blog->image_path) }}" alt="">
+            </a>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="/blogs">
-                  <img class="img-fluid" src="assets/img/blog/img-1.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="tag">Design</div>
-                <h3 class="title">
-                  <a href="/blog">
-                    The 9 Design Trends You Need to Know
-                  </a>
-                </h3>
-                <div class="meta-tags">
-                  <span class="date">Jan 20, 2018</span>
-                  <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
-                </div>
-              </div>
+          <div class="descr">
+            <h3 class="title">
+              <a href="{{ route('blog', ['id' => $blog->id]) }}" title="{{ $blog->title }}">
+                {{ Str::limit($blog->title, 50, '...') }}
+              </a>
+            </h3>
+            <p>{{ Str::limit($blog->content, 100, '...') }}</p>
+            <div class="meta-tags">
+              <span class="date">{{ $blog->created_at->format('M d, Y') }}</span>
+              <span class="comments">| by Cindy Jefferson</span>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/blog/img-2.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="tag">Design</div>
-                <h3 class="title">
-                  <a href="/blog">
-                    The 9 Design Trends You Need to Know
-                  </a>
-                </h3>
-                <div class="meta-tags">
-                  <span class="date">Jan 20, 2018 </span>
-                  <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="/blog">
-                  <img class="img-fluid" src="assets/img/blog/img-3.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="tag">Design</div>
-                <h3 class="title">
-                  <a href="/blog">
-                    The 9 Design Trends You Need to Know
-                  </a>
-                </h3>
-                <div class="meta-tags">
-                  <span class="date">Jan 20, 2018</span>
-                  <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 text-center">
-            <a href="/blogs" class="btn btn-common">Read More News</a>
           </div>
         </div>
       </div>
-    </section>
-    <script>
+      @endforeach
+
+      <div class="col-12 text-center">
+        <a href="/blogs" class="btn btn-common">Read More News</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="path/to/wow.min.js"></script>
+<script>
   new WOW().init(); // Initialize WOW.js
 </script>
-    <!-- Blog Section End -->
+<!-- Blog Section End -->
+
 
     <!-- Subscribe Area Start -->
     <div id="subscribe" class="section-padding">

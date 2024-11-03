@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Exception;
-
-
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\blogs;
 
 class BlogController extends Controller
 {
@@ -15,15 +15,18 @@ class BlogController extends Controller
 
     public function blogs(){
         try{
-            return view('blogs');
+            $posts =blogs::paginate(10);
+            return view('blogs',compact('posts'));
         }catch(Exception $e){
             return view($e,[],500);
         }
     }
 
-    public function blog(){
+    public function blog(Request $request){
         try{
-            return view('blog');
+            $id=$request->input('id');
+            $post=blogs::findOrFail($id);
+            return view('blog',compact('post'));
         }catch(Exception $e){
             return view($e,[],500);
         }

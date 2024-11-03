@@ -46,6 +46,7 @@ Route::get('/backend/testimonialPage',[TestimonialController::class,'index'])->n
 Route::get('/backend/testimonials',[TestimonialController::class,'show'])->name('Testimonials')->middleware('auth');
 Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'destroy'])->name('deleteTestimonials')->middleware('auth');
 Route::post('/create-testimonial',[TestimonialController::class,'store'])->name('Testimonial.create');
+Route::put('/add/a-comment/{id}',[TestimonialController::class,'store'])->name('post.comment');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

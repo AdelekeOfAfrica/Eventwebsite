@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\blogs;
 use App\Models\Banner;
 use App\Models\Pictures;
 use App\Models\sponsors;
@@ -22,9 +23,9 @@ class AuthenticationController extends Controller
             $sponsors = Sponsors::inRandomOrder()->take(4)->get(); 
             $testimonials = testimonial::all();
             $pictures = Pictures::inRandomOrder()->take(6)->get(); 
+            $blogs = blogs::inRandomOrder()->take(6)->get(); 
 
-
-            return view('index',compact('banners','sponsors','testimonials','pictures'));
+            return view('index',compact('banners','sponsors','testimonials','pictures','blogs'));
         }catch(Exception $e){
             return view($e,[],500);
         }

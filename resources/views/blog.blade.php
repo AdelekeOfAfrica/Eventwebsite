@@ -31,110 +31,86 @@
   
   </style>
   @include('navbar')
+  
 </head>
 <body>
   <section id="pricing" class="section-padding" style="background-color: white;">
-    <div class="row justify-content-center"  style="background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <div class="row justify-content-center" style="background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
       <div class="col-lg-8">
+        
         <!-- Blog Header -->
         <div class="blog-header text-center mt-3">
-          <h1 class="display-4">A Day in the Life of an Event</h1>
-          <p class="lead">by <strong>John Doe</strong> on October 17, 2024</p>
+          <h1 class="display-4">{{ $post->title }}</h1>
+          <p class="lead">by <strong>{{ $post->author }}</strong> on {{ $post->created_at->format('F d, Y') }}</p>
         </div>
 
         <!-- Post Content -->
         <div class="post-content">
-    
-            <div class="gallery-box">
-              <div class="img-thumb">
-              <img src="assets/img/sample.png" alt="Event Image" class="img-fluid">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/sample.png">
-                  <i class="lni-plus" style="color:#FF1493;"></i>
-                </a>
-              </div>
+          
+          <!-- Main Image -->
+          @if($post->image_path)
+          <div class="gallery-box">
+            <div class="img-thumb">
+              <img src="{{ asset($post->image_path) }}" alt="Event Image" class="img-fluid">
             </div>
-        
-          
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          
-          <h3>Event Highlights</h3>
-          <p>Phasellus convallis, augue ut facilisis volutpat, massa nisi pharetra libero, sit amet sodales felis eros vel magna. Aliquam erat volutpat. Sed laoreet orci non diam fermentum, ac aliquet magna tempor. Suspendisse tincidunt libero vitae nibh pulvinar, et condimentum libero vehicula. Cras ac risus ex.</p>
+            <div class="overlay-box text-center">
+              <a class="lightbox" href="{{ asset($post->image_path) }}">
+                <i class="lni-plus" style="color:#FF1493;"></i>
+              </a>
+            </div>
+          </div>
+          @endif
 
+          <p>{{ $post->content }}</p>
+
+          <!-- Additional Content or Highlights -->
+          <h3>Event Highlights</h3>
+          <p>{{ $post->highlights }}</p> <!-- Assuming highlights are part of the post content -->
+
+          <!-- Gallery Section -->
+          @if($post->gallery_images && is_array($post->gallery_images))
           <h3>Gallery</h3>
           <div class="row">
-          <div class="col-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/sample.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/sample.png">
-                  <i class="lni-plus" style="color:#FF1493;"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/sample.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/sample.png">
-                  <i class="lni-plus" style="color:#FF1493;"></i>
-                </a>
+            @foreach($post->gallery_images as $image)
+            <div class="col-md-6 col-sm-6 col-lg-4">
+              <div class="gallery-box">
+                <div class="img-thumb">
+                  <img class="img-fluid" src="{{ asset($image) }}" alt="">
+                </div>
+                <div class="overlay-box text-center">
+                  <a class="lightbox" href="{{ asset($image) }}">
+                    <i class="lni-plus" style="color:#FF1493;"></i>
+                  </a>
+                </div>
               </div>
             </div>
+            @endforeach
           </div>
-
-          <div class="col-md-6 col-sm-6 col-lg-4">
-            <div class="gallery-box">
-              <div class="img-thumb">
-                <img class="img-fluid" src="assets/img/sample.png" alt="">
-              </div>
-              <div class="overlay-box text-center">
-                <a class="lightbox" href="assets/img/sample.png">
-                  <i class="lni-plus" style="color:#FF1493;"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          </div>
+          @endif
         </div>
 
         <!-- Comment Section -->
         <div class="comment-section">
           <h4>Comments</h4>
 
-          <!-- Existing Comments -->
-          <div class="comment-box border p-3 rounded">
-            <strong>Jane Smith</strong> <span class="text-muted">on October 17, 2024 at 10:00 AM</span>
-            <p>This event was amazing! Thanks for sharing the highlights. Looking forward to the next one!</p>
-          </div>
-
-          <div class="comment-box border p-3 rounded">
-            <strong>Michael Brown</strong> <span class="text-muted">on October 16, 2024 at 5:45 PM</span>
-            <p>The gallery looks fantastic! I really wish I could have been there.</p>
-          </div>
+          <!-- Display Comments -->
+       
 
           <!-- Add Comment Form -->
           <div class="comment-form mt-4">
             <h5>Leave a Comment</h5>
-            <form>
+            <form method="POST" action="{{ route('post.comment', $post->id) }}">
+              @csrf
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
               </div>
               <div class="mb-3">
                 <label for="comment" class="form-label">Comment</label>
-                <textarea class="form-control" id="comment" rows="3" required></textarea>
+                <textarea class="form-control" id="comment" name="content" rows="3" required></textarea>
               </div>
-              <div class="col-xs-12 text-center" >
-              <a href="#" class="btn  browse-all-btn" style="background-color:#E91E63; color:white;">Drop A Comment</a>
+              <div class="col-xs-12 text-center">
+                <button type="submit" class="btn browse-all-btn" style="background-color:#E91E63; color:white;">Drop A Comment</button>
               </div>
             </form>
           </div>
@@ -143,5 +119,6 @@
     </div>
   </section>
 </body>
+
 
 </html>

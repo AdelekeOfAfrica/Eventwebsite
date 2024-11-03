@@ -7,83 +7,49 @@
         @include('navbar')
     </head>
     <body>
-        <section id="blog" class="section-padding">
+    <section id="blog" class="section-padding">
         <div class="container">
             <div class="row">
-            <div class="col-12">
-                <div class="section-title-header text-center">
-                <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s"></h1>
-                <p class="wow fadeInDown" data-wow-delay="0.2s">EvenTomy.co</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-xs-12">
-                <div class="blog-item">
-                <div class="blog-image">
-                    <a href="#">
-                    <img class="img-fluid" src="assets/img/blog/img-1.jpg" alt="">
-                    </a>
-                </div>
-                <div class="descr">
-                    <div class="tag">Design</div>
-                    <h3 class="title">
-                    <a href="/blog">
-                        The 9 Design Trends You Need to Know
-                    </a>
-                    </h3>
-                    <div class="meta-tags">
-                    <span class="date">Jan 20, 2018</span>
-                    <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
+                <div class="col-12">
+                    <div class="section-title-header text-center">
+                        <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Latest News & Articles</h1>
+                        <p class="wow fadeInDown" data-wow-delay="0.2s">EvenTomy.co</p>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-xs-12">
-                <div class="blog-item">
-                <div class="blog-image">
-                    <a href="/blogs">
-                    <img class="img-fluid" src="assets/img/blog/img-2.jpg" alt="">
-                    </a>
-                </div>
-                <div class="descr">
-                    <div class="tag">Design</div>
-                    <h3 class="title">
-                    <a href="/blog">
-                        The 9 Design Trends You Need to Know
-                    </a>
-                    </h3>
-                    <div class="meta-tags">
-                    <span class="date">Jan 20, 2018 </span>
-                    <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
+
+                @foreach($posts as $post)
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="blog-item">
+                        <div class="blog-image">
+                            <a href="{{ route('blog', ['id' => $post->id]) }}">
+                                <img class="img-fluid" src="{{ asset($post->image_path) }}" alt="{{ $post->title }}">
+                            </a>
+                        </div>
+                        <div class="descr">
+                            <div class="tag">{{ $post->category ?? 'General' }}</div> <!-- Category or default -->
+                            <h3 class="title">
+                                <a href="{{ route('blog', ['id' => $post->id]) }}">
+                                    {{ $post->title }}
+                                </a>
+                            </h3>
+                            <p>{{ Str::limit($post->content, 100, '...') }}</p>
+                            <div class="meta-tags">
+                                <span class="date">{{ $post->created_at->format('M d, Y') }}</span>
+                                <span class="comments">| by {{ $post->author ?? 'Admin' }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-xs-12">
-                <div class="blog-item">
-                <div class="blog-image">
-                    <a href="/blogs">
-                    <img class="img-fluid" src="assets/img/blog/img-3.jpg" alt="">
-                    </a>
-                </div>
-                <div class="descr">
-                    <div class="tag">Design</div>
-                    <h3 class="title">
-                    <a href="/blog">
-                        The 9 Design Trends You Need to Know
-                    </a>
-                    </h3>
-                    <div class="meta-tags">
-                    <span class="date">Jan 20, 2018</span>
-                    <span class="comments">| <a href="/blog"> by Cindy Jefferson</a></span>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-12 text-center">
-                <!-- <a href="#" class="btn btn-common">Read More News</a> -->
-            </div>
+                @endforeach
+
+                <div class="row justify-content-center mt-4">
+          <div class="col-12 d-flex justify-content-center">
+            {{ $posts->links('pagination') }}
+          </div>
+        </div>
             </div>
         </div>
-        </section>
-    </body>
+    </section>
+</body>
+
 </html>

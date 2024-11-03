@@ -31,6 +31,33 @@ class TestimonialController extends Controller
     public function store(Request $request)
     {
         //
+        try{
+
+        
+           
+            $validatedData =  $request->validate([
+                  'name' => 'required|string|max:255',
+                  'comment'=>'required',
+             
+              ]);
+  
+              testimonial::create([
+                  'name' => $validatedData['name'],
+                  'comment' => $validatedData['comment'],
+                 
+              ]);
+      
+              // Respond with a success message
+              return response()->json(['success' => true]);
+  
+          }catch(Exception $e){
+              return response()->json([
+                  'success' => false,
+                  'message' => 'Failed to store your testimonial . Please try again later.',
+                  'error' => $e->getMessage() // Optional: show the error message for debugging
+              ], 500);
+          }
+  
     }
 
     /**

@@ -178,9 +178,8 @@
 </section>
 <!-- Gallery Section End -->
 
-
-    <!-- testimonial Section Start -->
-    <section class="countdown-timer section-padding">
+<!-- testimonial Section Start -->
+<section class="countdown-timer section-padding">
     <div class="container" style="background-color: white; padding: 60px 0;">
         <div class="text-center mb-5">
             <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size: 2.5em; font-weight: bold;">Testimonials</h1>
@@ -211,15 +210,47 @@
 
                 <div class="row justify-content-center mt-3">
                     <div class="col-xs-12 text-center">
-                        <a href="/give-testimony" class="btn btn-common">Give Testimony</a>
+                        <a href="#" class="btn btn-common" data-wow-delay=".6s" data-toggle="modal" data-target="#testimonyModal">Give Testimony</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- testimonial Section End -->
 
-    <!-- testimonial Section End -->
+<!-- Modal for Testimonial Form -->
+<div class="modal fade" id="testimonyModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header btn-common">
+        <h5 class="modal-title text-white mt-3" id="eventModalLabel">Submit Testimonial</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="errorMessages" class="alert alert-danger" style="display: none;"></div>
+        <form id="testimonialForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Give Testimony</label>
+            <textarea class="form-control" id="comment" placeholder="Enter your comment" rows="4" required></textarea>
+          </div>
+          
+          <!-- Submit button inside the form -->
+          <button type="submit" class="btn btn-common btn-lg btn-block">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of modal -->
+
 
     
 <!-- Sponsors Section Start -->
@@ -342,6 +373,9 @@
         </div>
       </div>
     </section>
+    <script>
+  new WOW().init(); // Initialize WOW.js
+</script>
     <!-- Blog Section End -->
 
     <!-- Subscribe Area Start -->
@@ -481,6 +515,53 @@
     </div>
 
   </body>
+  
+  <script>
+$(document).ready(function() {
+    // Capture form submission
+    $('#testimonialForm').on('submit', function(e) {
+        e.preventDefault();
 
+        // Clear previous error messages
+        $('#errorMessages').html('').hide();
+
+        // Gather form data
+        const formData = {
+            name: $('#name').val(),
+            comment: $('#comment').val(),
+            _token: '{{ csrf_token() }}' // CSRF token for security
+        };
+
+        // Send data via AJAX
+        $.ajax({
+            url: '{{ route("Testimonial.create") }}', // Laravel route for form submission
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                if(response.success) {
+                    // Show success message and reset the form
+                    alert('Testimonial submitted  successfully.');
+                    $('#eventModal').modal('hide');
+                    $('#eventBookingForm')[0].reset(); // Reset form fields
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle validation errors (status 422)
+                if(xhr.status === 422) {
+                    const errors = xhr.responseJSON.errors;
+                    let errorMessages = '<ul>';
+                    $.each(errors, function(key, value) {
+                        errorMessages += '<li>' + value[0] + '</li>'; // Get the first error for each field
+                    });
+                    errorMessages += '</ul>';
+
+                    // Display error messages in the modal
+                    $('#errorMessages').html(errorMessages).show();
+                }
+            }
+        });
+    });
+});
+</script>
   @endsection
   </html>

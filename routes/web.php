@@ -18,7 +18,7 @@ Route::get('/login',[AuthenticationController::class,'login'])->name('login');
 Route::post('/postlogin',[AuthenticationController::class,'postLogin'])->name('postLogin');
 Route::get('/dashboard',[AuthenticationController::class,'dashboard'])->middleware('auth');
 Route::post('/logout', [AuthenticationController::class,'logout'])->name('logout');
-Route::get('/events/data', [EventsController::class, 'getEventData'])->name('events.fetch')->middleware('auth');;
+Route::get('/events/data', [EventsController::class, 'getEventData'])->name('events.fetch')->middleware('auth');
 Route::get('/events/{eventId}', [EventsController::class, 'eventDetail'])->name('eventDetail')->middleware('auth');
 Route::get('/users',[AuthenticationController::class,'users'])->name('users');
 Route::get('/bannersection',[BannerController::class ,'Banners'])->name('banners')->middleware('auth');
@@ -45,6 +45,7 @@ Route::post('/backend/create-sponsor',[sponsorsController::class,'createSponsor'
 Route::get('/backend/testimonialPage',[TestimonialController::class,'index'])->name('TestimonialPage')->middleware('auth');
 Route::get('/backend/testimonials',[TestimonialController::class,'show'])->name('Testimonials')->middleware('auth');
 Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'destroy'])->name('deleteTestimonials')->middleware('auth');
+Route::post('/create-testimonial',[TestimonialController::class,'store'])->name('Testimonial.create');
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

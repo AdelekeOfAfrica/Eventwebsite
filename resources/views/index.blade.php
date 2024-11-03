@@ -541,8 +541,9 @@ $(document).ready(function() {
                 if(response.success) {
                     // Show success message and reset the form
                     alert('Testimonial submitted  successfully.');
-                    $('#eventModal').modal('hide');
-                    $('#eventBookingForm')[0].reset(); // Reset form fields
+                    $('#testimonialModal').modal('hide');
+                    $('#testimonialForm')[0].reset(); // Reset form fields
+                    location.reload();
                 }
             },
             error: function(xhr, status, error) {

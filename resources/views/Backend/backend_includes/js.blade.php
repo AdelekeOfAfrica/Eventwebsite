@@ -531,6 +531,78 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
     });
 </script>
 
+<!-- script to handle blog post -->
+<script>
+    $(document).ready(function() {
+        // Initialize DataTable
+        $('#BlogTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: "{{ route('backend.blogpostApi') }}",
+                type: 'GET'
+            },
+            columns: [
+                { data: 'id' },
+                {
+                data: 'image_path',
+                render: function(data, type, row) {
+                    // Display the image with the correct path
+                    return `<img src="${data}" alt="Banner Image" class="img-fluid" style="max-width: 100px;" />`;
+                },},
+                { data: 'title' },
+                {
+                data: 'content',
+                render: function(data, type, row) {
+                    // Check if the content length exceeds 80 characters
+                    return data.length > 80 ? data.substring(0, 80) + '...' : data;
+                }
+            },
+               
+                {
+                    data: null,
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, row) {
+                        return `
+                         <button class="btn btn-primary view-button-sponsor" data-id="${row.id}" data-toggle="modal" data-target="#blogModal">
+                            View
+                        </button>
+                        `;
+                    }
+                }
+            ]
+        });
+
+        $(document).on('click', '.view-button-sponsor', function() {
+    const blogId = $(this).data('id');
+
+    // Fetch the banner details
+    $.ajax({
+        url: `/backend-blog-detail/${blogId}`, // Your route to get the banner details
+        type: 'GET',
+        success: function(data) {
+            // Populate the form fields in the modal
+            console.log(data); 
+            $('#bannerId').val(data.id);
+            $('#eventName').val(data.title);
+            $('#content').val(data.content.replace(/<\/?[^>]+(>|$)/g, ""));  // Remove HTML tags
+
+            $('#eventImage').attr('src', data.image_path); // Display the image in the modal
+
+            // Show the modal, then set the content after a short delay
+            $('#bannerModal').modal('show');
+
+             // Adjust delay if necessary
+        },
+        error: function(xhr) {
+            alert('Error fetching banner details: ' + xhr.responseJSON.error);
+        }
+    });
+});
+
+    });
+</script>
 
 
 

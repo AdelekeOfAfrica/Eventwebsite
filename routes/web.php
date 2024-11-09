@@ -47,6 +47,10 @@ Route::get('/backend/testimonials',[TestimonialController::class,'show'])->name(
 Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'destroy'])->name('deleteTestimonials')->middleware('auth');
 Route::post('/create-testimonial',[TestimonialController::class,'store'])->name('Testimonial.create');
 Route::put('/add/a-comment/{id}',[TestimonialController::class,'store'])->name('post.comment');
+Route::get('/backend-blog-post',[BlogController::class,'allBlogPost'])->name('backend.blogpost')->middleware('auth');
+Route::get('/backend-blog-post-api',[BlogController::class,'allBlogPostApi'])->name('backend.blogpostApi')->middleware('auth');
+Route::get('/backend-blog-detail/{blogId}',[BlogController::class,'blogDetailApi'])->name('blog-detail-api')->middleware('auth');
+
 // Route::get('/login',function (){
 //     return view('Backend.login');
 // });

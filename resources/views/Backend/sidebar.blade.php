@@ -15,8 +15,8 @@
         <a class="nav-link m-2" href="/backend/testimonialPage">
             <i class="fas fa-images"></i> Testimonials
         </a>
-        <a class="nav-link m-2" href="#faq">
-            <i class="fas fa-question-circle"></i> FAQ
+        <a class="nav-link m-2" href="/backend-blog-post">
+            <i class="fas fa-question-circle"></i> BlogPost
         </a>
       
         <a class="nav-link m-2" href="#pricing">

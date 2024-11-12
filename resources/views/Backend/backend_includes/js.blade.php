@@ -565,7 +565,7 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
                     searchable: false,
                     render: function(data, type, row) {
                         return `
-                         <button class="btn btn-primary view-button-sponsor" data-id="${row.id}" data-toggle="modal" data-target="#blogModal">
+                         <button class="btn btn-primary view-button-sponsor" data-id="${row.id}">
                             View
                         </button>
                         `;
@@ -575,31 +575,9 @@ document.getElementById('BannerUpload').addEventListener('change', function(even
         });
 
         $(document).on('click', '.view-button-sponsor', function() {
-    const blogId = $(this).data('id');
-
-    // Fetch the banner details
-    $.ajax({
-        url: `/backend-blog-detail/${blogId}`, // Your route to get the banner details
-        type: 'GET',
-        success: function(data) {
-            // Populate the form fields in the modal
-            console.log(data); 
-            $('#bannerId').val(data.id);
-            $('#eventName').val(data.title);
-            $('#content').val(data.content.replace(/<\/?[^>]+(>|$)/g, ""));  // Remove HTML tags
-
-            $('#eventImage').attr('src', data.image_path); // Display the image in the modal
-
-            // Show the modal, then set the content after a short delay
-            $('#bannerModal').modal('show');
-
-             // Adjust delay if necessary
-        },
-        error: function(xhr) {
-            alert('Error fetching banner details: ' + xhr.responseJSON.error);
-        }
-    });
-});
+            const blogId = $(this).data('id');
+            window.location.href = `/backend-blog-detail/${blogId}`;
+        });
 
     });
 </script>

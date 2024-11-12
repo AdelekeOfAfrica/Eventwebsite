@@ -91,15 +91,15 @@ class BlogController extends Controller
             return response()->json(['error' => $e->getMessage()], 500); // Return error message
         }
     }
-    public function blogDetailApi($blogId){
+    public function blogDetailPage($blogId){
         try{
 
             try {
                 // Fetch the event by ID
-                $data = blogs::findOrFail($blogId);
+                $blogPostDetails = blogs::findOrFail($blogId);
         
                 // Return the event details as JSON
-                return response()->json($data);
+                return view('Backend.blogPostDetails',compact('blogPostDetails'));
             } catch (\Exception $e) {
                 return response()->json(['error' => $e->getMessage()], 500);
             }

@@ -113,7 +113,7 @@
                         <!-- Content Field -->
                         <div class="form-group">
                             <label for="content">Content</label>
-                            <textarea class="form-control" id="content" name="content" rows="5" placeholder="Enter blog content" required>{{ $blogPostDetails->content }}</textarea>
+                            <textarea class="form-control quill-editor-default" id="content" name="content" rows="5" placeholder="Enter blog content" required>{{ $blogPostDetails->content }}</textarea>
                         </div>
 
                         <!-- Submit Button -->
@@ -129,17 +129,26 @@
     @include('Backend.backend_includes.js')
 
     <script>
-        // Function to format content into paragraphs on form submit
-        function formatContent() {
-            let contentField = document.getElementById('content');
-            let content = contentField.value;
+    // Function to format content into paragraphs on form submit
+    function formatContent() {
+        let contentField = document.getElementById('content');
+        let content = contentField.value;
 
-            // Add a newline after each full stop followed by a space or the end of text
-            content = content.replace(/\\.(\\s|$)/g, '.\n\n');
+        // Trim any extra whitespace from start and end of the content
+        content = content.trim();
 
-            // Update the content field with formatted text
-            contentField.value = content;
-        }
-    </script>
+        // Split content based on full stops followed by space or end of line
+        let sentences = content.split(/(?<=\.)\s+/);
+
+        // Wrap each sentence in <p> tags
+        let formattedContent = sentences.map(sentence => `<p>${sentence.trim()}</p>`).join('');
+
+        // Update the content field with formatted text
+        contentField.value = formattedContent;
+        console.log(formattedContent);
+    }
+</script>
+
+
 </body>
 </html>

@@ -319,7 +319,7 @@
                 {{ Str::limit($blog->title, 50, '...') }}
               </a>
             </h3>
-            <p>{{ Str::limit($blog->content, 100, '...') }}</p>
+            <p>{!! Str::limit($blog->content, 100, '...') !!}</p>
             <div class="meta-tags">
               <span class="date">{{ $blog->created_at->format('M d, Y') }}</span>
               <span class="comments">| by Cindy Jefferson</span>

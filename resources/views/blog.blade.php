@@ -61,7 +61,7 @@
           </div>
           @endif
 
-          <p>{{ $post->content }}</p>
+          <p>{!! $post->content !!}</p>
 
           <!-- Additional Content or Highlights -->
           <h3>Event Highlights</h3>

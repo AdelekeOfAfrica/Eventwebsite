@@ -77,10 +77,10 @@
                     </div>
 
                     <!-- Form Starts Here -->
-                    <form method="post" action="{{ route('updateBackendPictures') }}" id="bannerForm" enctype="multipart/form-data" onsubmit="formatContent()">
+                    <form method="post" action="{{ route('updateBlogPostDetails') }}" id="bannerForm" enctype="multipart/form-data" onsubmit="formatContent()">
                         @csrf
                         @method('PUT')
-                        <input type="hidden" id="bannerId" name="bannerId" value="{{ $blogPostDetails->id }}">
+                        <input type="hidden" id="blogId" name="blogId" value="{{ $blogPostDetails->id }}">
 
                         <!-- Main Image Upload with Preview -->
                         <div class="form-group text-center">
@@ -107,7 +107,7 @@
                         <!-- Title Field -->
                         <div class="form-group">
                             <label for="eventName">Title</label>
-                            <input type="text" class="form-control" id="eventName" name="bannerTitle" placeholder="Enter blog title" value="{{ $blogPostDetails->title }}" required>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter blog title" value="{{ $blogPostDetails->title }}" required>
                         </div>
 
                         <!-- Content Field -->

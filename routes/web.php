@@ -50,6 +50,7 @@ Route::put('/add/a-comment/{id}',[TestimonialController::class,'store'])->name('
 Route::get('/backend-blog-post',[BlogController::class,'allBlogPost'])->name('backend.blogpost')->middleware('auth');
 Route::get('/backend-blog-post-api',[BlogController::class,'allBlogPostApi'])->name('backend.blogpostApi')->middleware('auth');
 Route::get('/backend-blog-detail/{blogId}',[BlogController::class,'blogDetailPage'])->name('blog-detail-api')->middleware('auth');
+Route::put('/backend-update-blog-post-details',[BlogController::class,'updateBlogPostDetails'])->name('updateBlogPostDetails')->middleware('auth');
 
 // Route::get('/login',function (){
 //     return view('Backend.login');

@@ -51,6 +51,7 @@ Route::get('/backend-blog-post',[BlogController::class,'allBlogPost'])->name('ba
 Route::get('/backend-blog-post-api',[BlogController::class,'allBlogPostApi'])->name('backend.blogpostApi')->middleware('auth');
 Route::get('/backend-blog-detail/{blogId}',[BlogController::class,'blogDetailPage'])->name('blog-detail-api')->middleware('auth');
 Route::put('/backend-update-blog-post-details',[BlogController::class,'updateBlogPostDetails'])->name('updateBlogPostDetails')->middleware('auth');
+Route::post('/backend-create-blog-post',[BlogController::class,'createBlogPost'])->name('createBlogPost')->middleware('auth');
 
 // Route::get('/login',function (){
 //     return view('Backend.login');

@@ -322,7 +322,7 @@
             <p>{!! Str::limit($blog->content, 100, '...') !!}</p>
             <div class="meta-tags">
               <span class="date">{{ $blog->created_at->format('M d, Y') }}</span>
-              <span class="comments">| by Cindy Jefferson</span>
+              <span class="comments">|{{$blog->createdBy->name}}</span>
             </div>
           </div>
         </div>

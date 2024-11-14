@@ -41,7 +41,7 @@
         <!-- Blog Header -->
         <div class="blog-header text-center mt-3">
           <h1 class="display-4">{{ $post->title }}</h1>
-          <p class="lead">by <strong>{{ $post->author }}</strong> on {{ $post->created_at->format('F d, Y') }}</p>
+          <p class="lead">by <strong>{{ $post->createdBy->name }}</strong> on {{ $post->created_at->format('F d, Y') }}</p>
         </div>
 
         <!-- Post Content -->

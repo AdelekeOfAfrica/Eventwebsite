@@ -11,4 +11,8 @@ class blogs extends Model
     use HasFactory;
 
     protected $fillable =["title","content","image_path","other_images"];
+
+    public function createdBy(){
+        return $this->belongsTo(User::class,'created_by');
+    }
 }

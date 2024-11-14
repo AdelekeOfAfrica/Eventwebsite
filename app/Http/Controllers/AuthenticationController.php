@@ -23,7 +23,7 @@ class AuthenticationController extends Controller
             $sponsors = Sponsors::inRandomOrder()->take(4)->get(); 
             $testimonials = testimonial::all();
             $pictures = Pictures::inRandomOrder()->take(6)->get(); 
-            $blogs = blogs::inRandomOrder()->take(6)->get(); 
+            $blogs = blogs::inRandomOrder()->take(3)->get(); 
 
             return view('index',compact('banners','sponsors','testimonials','pictures','blogs'));
         }catch(Exception $e){
@@ -59,7 +59,8 @@ class AuthenticationController extends Controller
         $pictures =Pictures::count();
         $sponsors=sponsors::count();
         $testimonials=testimonial::count();
-        return view('Backend.dashboard',compact('banners','pictures','sponsors','testimonials'));
+        $blogPosts = blogs::count();
+        return view('Backend.dashboard',compact('banners','pictures','sponsors','testimonials','blogPosts'));
     }
 
 

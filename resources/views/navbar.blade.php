@@ -148,37 +148,23 @@
                 <button class="toggle-icon" id="toggle-button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="index.html" class="navbar-brand"><img src="assets/img/sample.png" alt="Logo"></a>
+                <a href="/" class="navbar-brand"><img src="assets/img/sample.png" alt="Logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav ml-auto d-none d-lg-flex"> <!-- Desktop Menu -->
                     <li class="nav-item active">
-                        <a class="nav-link" href="#header-wrap">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="/blogs">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/front-end-pictures"> Pictures</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Speakers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">Faq</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sponsors">Sponsors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#google-map-area">Contact</a>
-                    </li>
+
                 </ul>
             </div>
         </div>

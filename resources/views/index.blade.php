@@ -38,6 +38,11 @@
           <li><i class="lni-check-mark-circle"></i> Expert Planning and Coordination Every Step of the Way</li>
           <li><i class="lni-check-mark-circle"></i> Innovative Ideas that Captivate and Engage</li>
           <li><i class="lni-check-mark-circle"></i> Trusted by Leading Brands to Deliver Excellence</li>
+          <li class="mt-2">
+            <div class="col-12 text-left">
+              <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s" data-toggle="modal" data-target="#eventModal">Book us for your next event</a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -171,7 +176,7 @@
     </div>
     <div class="row justify-content-center mt-3">
       <div class="col-xs-12">
-        <a href="/front-end/pictures" class="btn btn-common">Browse All</a>
+        <a href="/front-end-pictures" class="btn btn-common">Browse All</a>
       </div>
     </div>
   </div>
@@ -275,7 +280,7 @@
                 </div>
             @endforeach
             <div class="col-12 text-center">
-                <a href="#" class="btn btn-common">Become a Sponsor</a>
+            <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s" data-toggle="modal" data-target="#eventModal">Book us for your next event</a>
             </div>
         </div>
     </div>

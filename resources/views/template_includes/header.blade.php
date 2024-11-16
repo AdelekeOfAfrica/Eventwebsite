@@ -11,7 +11,7 @@
               <span class="icon-menu"></span>
               <span class="icon-menu"></span>
             </button>
-            <a href="index.html" class="navbar-brand"><img src="assets/img/sample.png" alt=""></a>
+            <a href="/" class="navbar-brand"><img src="assets/img/sample.png" alt=""></a>
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
@@ -69,25 +69,23 @@
             <a class="page-scrool" href="#about">About</a>
           </li>
           <li>
-             <a class="page-scroll" href="#schedules">schedules</a>
+             <a class="page-scroll" href="#eventHighlight"> Highlight</a>
           </li>
-          <li>
-            <a class="page-scroll" href="#team">Speakers</a>
-          </li>
+          
           <li>
             <a class="page-scroll" href="#gallery">Gallery</a>
           </li>
           <li>
-            <a class="page-scroll" href="#faq">Faq</a>
+            <a class="page-scroll" href="#testimonial">Testimonials</a>
           </li>
           <li>
             <a class="page-scroll" href="#sponsors">Sponsors</a>
           </li>
           <li>
-            <a class="page-scroll" href="#pricing">pricing</a>
+            <a class="page-scroll" href="#blog"> Blogs</a>
           </li>
           <li>
-            <a class="page-scroll" href="#google-map-area">Contact</a>
+            <a class="page-scroll" href="/login"> Login</a>
           </li>
         </ul>
         <!-- Mobile Menu End -->
@@ -118,7 +116,7 @@
             <div class="carousel-caption d-md-block">
                 <p class="fadeInUp wow" data-wow-delay=".6s">{{ $banner->description }}</p>
                 <h1 class="wow fadeInDown heading" data-wow-delay=".4s">{{ $banner->title }}</h1>
-                <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s" data-toggle="modal" data-target="#eventModal">Book us for an event</a>
+                <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s" data-toggle="modal" data-target="#eventModal">Book us for your next event</a>
                
             </div>
         </div>

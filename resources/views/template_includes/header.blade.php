@@ -16,7 +16,7 @@
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item active">
-                <a class="nav-link" href="#header-wrap">
+                <a class="nav-link" href="/">
                   Home
                 </a>
               </li>
@@ -26,23 +26,18 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/login">
-                  Login
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">
-                  Speakers
+                <a class="nav-link" href="#eventHighlight">
+                   Highlight
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#gallery">
-                  Gallery
+                Gallery
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#faq">
-                  Faq
+                <a class="nav-link" href="#testimonial">
+                  Testimonials
                 </a>
               </li>
               <li class="nav-item">
@@ -51,13 +46,14 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#pricing">
-                  pricing
+                <a class="nav-link" href="#blog">
+                  Blogs
                 </a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link" href="#google-map-area">
-                  Contact
+                <a class="nav-link" href="/login">
+                  Login
                 </a>
               </li>
             </ul>
@@ -67,7 +63,7 @@
         <!-- Mobile Menu Start -->
         <ul class="mobile-menu">
           <li>
-            <a class="page-scrool" href="#header-wrap">Home</a>
+            <a class="page-scrool" href="/">Home</a>
           </li>
           <li>
             <a class="page-scrool" href="#about">About</a>

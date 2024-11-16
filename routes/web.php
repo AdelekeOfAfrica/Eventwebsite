@@ -9,6 +9,7 @@ use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\SponsorsController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\CommentController;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -46,7 +47,7 @@ Route::get('/backend/testimonialPage',[TestimonialController::class,'index'])->n
 Route::get('/backend/testimonials',[TestimonialController::class,'show'])->name('Testimonials')->middleware('auth');
 Route::delete('/backend/delete-testimonials/{testimonialId}',[TestimonialController::class,'destroy'])->name('deleteTestimonials')->middleware('auth');
 Route::post('/create-testimonial',[TestimonialController::class,'store'])->name('Testimonial.create');
-Route::put('/add/a-comment/{id}',[TestimonialController::class,'store'])->name('post.comment');
+Route::post('/add/a-comment/{id}',[CommentController::class,'AddComment'])->name('post.comment');
 Route::get('/backend-blog-post',[BlogController::class,'allBlogPost'])->name('backend.blogpost')->middleware('auth');
 Route::get('/backend-blog-post-api',[BlogController::class,'allBlogPostApi'])->name('backend.blogpostApi')->middleware('auth');
 Route::get('/backend-blog-detail/{blogId}',[BlogController::class,'blogDetailPage'])->name('blog-detail-api')->middleware('auth');

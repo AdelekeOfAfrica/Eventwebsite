@@ -16,7 +16,7 @@
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item active">
-                <a class="nav-link" href="#header-wrap">
+                <a class="nav-link" href="/home">
                   Home
                 </a>
               </li>
@@ -26,8 +26,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/login">
-                  Login
+                <a class="nav-link" href="#eventHighlight">
+                  Event Highlight
                 </a>
               </li>
               <li class="nav-item">

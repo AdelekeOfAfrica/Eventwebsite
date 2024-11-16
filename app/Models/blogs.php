@@ -15,4 +15,7 @@ class blogs extends Model
     public function createdBy(){
         return $this->belongsTo(User::class,'created_by');
     }
+    public function comments(){
+        return $this->hasMany(comment::class,'post_id');
+    }
 }

@@ -14,7 +14,7 @@
 @section('content')
 
 <!-- Event Slides Section Start -->
-<section id="event-slides" class="section-padding">
+<section id="about" class="section-padding">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -32,7 +32,7 @@
         <p class="intro-desc">
           Transform your vision into reality! At Eventomy, we specialize in crafting unforgettable experiences that resonate with your audience. Our passion for detail and commitment to excellence ensures every aspect of your event is executed flawlessly.
         </p>
-        <h2 class="intro-title">Why Choose Us?</h2>
+        <h2 class="intro-title mt-2">Why Choose Us?</h2>
         <ul class="list-specification">
           <li><i class="lni-check-mark-circle"></i> Tailored Event Solutions that Fit Your Needs</li>
           <li><i class="lni-check-mark-circle"></i> Expert Planning and Coordination Every Step of the Way</li>
@@ -93,7 +93,7 @@
     <!-- Counter Area End -->
 
       <!-- Full-Screen Video Area Start -->
-<section id="video" class="section-padding mt-3" style="padding: 0;">
+<section id="eventHighlight" class="section-padding mt-3" style="padding: 0;">
   <div class="container-fluid" style="padding: 0;">
     <div class="row">
       <div class="col-12">
@@ -179,14 +179,14 @@
 <!-- Gallery Section End -->
 
 <!-- testimonial Section Start -->
-<section class="countdown-timer section-padding">
+<section id="testimonial" class="countdown-timer section-padding">
     <div class="container" style="background-color: white; padding: 60px 0;">
         <div class="text-center mb-5">
             <h1 class="wow fadeInUp" data-wow-delay="0.2s" style="font-size: 2.5em; font-weight: bold;">Testimonials</h1>
             <p class="wow fadeInDown" data-wow-delay="0.2s" style="font-size: 1.2em; color: #888;">Eventomy.co</p>
         </div>
 
-        <div id="testimonial-slide" class="carousel slide" data-ride="carousel">
+        <div  class="carousel slide" data-ride="carousel">
             <div class="carousel-inner text-center">
                 @foreach ($testimonials as $testimonial)
                     <div class="carousel-item @if($loop->first) active @endif">

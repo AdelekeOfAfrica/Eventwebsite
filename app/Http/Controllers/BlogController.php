@@ -6,6 +6,7 @@ use Exception;
 use App\Models\blogs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\comment;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -29,7 +30,8 @@ class BlogController extends Controller
         try{
             $id=$request->input('id');
             $post=blogs::findOrFail($id);
-            return view('blog',compact('post'));
+            $comments=comment::where('post_id',$id)->paginate(5);
+            return view('blog',compact('post','comments'));
         }catch(Exception $e){
             return view($e,[],500);
         }

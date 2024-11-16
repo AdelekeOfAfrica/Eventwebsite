@@ -29,16 +29,17 @@
         </div>
       </div>
       <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
+      <h2 class="intro-title mt-2">Why Choose Us?</h2>
         <p class="intro-desc">
           Transform your vision into reality! At Eventomy, we specialize in crafting unforgettable experiences that resonate with your audience. Our passion for detail and commitment to excellence ensures every aspect of your event is executed flawlessly.
         </p>
-        <h2 class="intro-title mt-2">Why Choose Us?</h2>
-        <ul class="list-specification">
+        
+        <ul class="list-specification mt-2">
           <li><i class="lni-check-mark-circle"></i> Tailored Event Solutions that Fit Your Needs</li>
           <li><i class="lni-check-mark-circle"></i> Expert Planning and Coordination Every Step of the Way</li>
           <li><i class="lni-check-mark-circle"></i> Innovative Ideas that Captivate and Engage</li>
           <li><i class="lni-check-mark-circle"></i> Trusted by Leading Brands to Deliver Excellence</li>
-          <li class="mt-2">
+          <li class="mt-3">
             <div class="col-12 text-left">
               <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s" data-toggle="modal" data-target="#eventModal">Book us for your next event</a>
             </div>
